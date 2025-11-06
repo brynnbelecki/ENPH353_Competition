@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="car_controller"
+         type="subscriber.py"
+         name="controller" 
+         output="screen"/>
+</launch>

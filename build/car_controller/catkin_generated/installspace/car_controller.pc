@@ -1,0 +1,8 @@
+prefix=/home/fizzer/ros_ws/install
+
+Name: car_controller
+Description: Description of car_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
