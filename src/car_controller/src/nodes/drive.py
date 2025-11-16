@@ -28,6 +28,8 @@ class Car:
         rate = rospy.Rate(30)
         self.last_processed_time = time.time()
         self.min_interval = 0.01
+        
+        self.state = "drive, gray road, before ped"
         self.lastError = None
 
         while not rospy.is_shutdown():
@@ -57,16 +59,13 @@ class Car:
 
         except rospy.ServiceException:
             print ("Service call failed")
-
-    def drive(self):
-        print("drive here")  
+        
 
     def process(self, image):
         global last_processed_time
         current_time = time.time()
         if current_time - self.last_processed_time >= self.min_interval:
-            #create and publish motion to robot
-            move = Twist()
+            
     
             #convert image to cv encoding and display
             cvBridge = CvBridge()
@@ -74,78 +73,85 @@ class Car:
                 cvImage = cvBridge.imgmsg_to_cv2(image, desired_encoding="bgr8")
             except CvBridgeError as e:
                 rospy.logerr(e)
-
-            gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-            
-            THRESHOLD = 100 #From looking at printed frame
-            _, threshold = cv.threshold(gray, THRESHOLD, 255, cv.THRESH_BINARY)
-            height, width = threshold.shape
-
-            error = 0
-            kp = 0.005
-            kd = 0.000
-
-            left1 = width / 2
-            right1 = width / 2
-            left2 = width / 2
-            right2 = width / 2
-            found = False
-            y = height - 250
-            for x in range(1, width):
-                if not found:
-                    if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
-                        left1 = x
-                    elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
-                        right1 = x
-                        found = True
-                else:
-                    if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
-                        left2 = x
-                    elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
-                        right2 = x
-
-            print("size")
-            print(cvImage.shape)
-
-            print("left1")
-            print(left1)
-            print("right1")
-            print(right1)
-
-            print("left2")
-            print(left2)
-            print("right2")
-            print(right2)
-
-            lineLoc = (right1 + left2) / 2.0 #middle of line
-            #print(left2 - right1)
-            #print("line")
-            # print(lineLoc)
-            #error is deviation from middle of screen 
-            error = width / 2.0 - lineLoc
-            #print(error)
-            
-            proportional = -1 * kp * error 
-            if error == width / 2.0: 
-                proportional *= -1
-            if abs(error) > 300:
-                proportional *= 3
-            move.linear.x = 0.5
-            
-            if self.lastError == None:
-                self.lastError = error
-            derivative = kd * (error - self.lastError)
-            self.lastError = error
-
-            #print(proportional)
-            move.angular.z = proportional + derivative
-
-            #cv.imshow("image", cvImage)
-            cv.waitKey(3)
-
-            self.pubSpeed.publish(move)
             
             self.last_processed_time = current_time
+
+    ## Line following algorithm
+    #
+    #< @param cvImage robot camera image
+    def drive(self, cvImage):
+        #create and publish motion to robot
+        move = Twist()
+
+        gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
+        
+        THRESHOLD = 100 #From looking at printed frame
+        _, threshold = cv.threshold(gray, THRESHOLD, 255, cv.THRESH_BINARY)
+        height, width = threshold.shape
+
+        error = 0
+        kp = 0.005
+        kd = 0.000
+
+        left1 = width / 2
+        right1 = width / 2
+        left2 = width / 2
+        right2 = width / 2
+        found = False
+        y = height - 250
+        for x in range(1, width):
+            if not found:
+                if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
+                    left1 = x
+                elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
+                    right1 = x
+                    found = True
+            else:
+                if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
+                    left2 = x
+                elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
+                    right2 = x
+
+        print("size")
+        print(cvImage.shape)
+
+        print("left1")
+        print(left1)
+        print("right1")
+        print(right1)
+
+        print("left2")
+        print(left2)
+        print("right2")
+        print(right2)
+
+        lineLoc = (right1 + left2) / 2.0 #middle of line
+        #print(left2 - right1)
+        #print("line")
+        # print(lineLoc)
+        #error is deviation from middle of screen 
+        error = width / 2.0 - lineLoc
+        #print(error)
+        
+        proportional = -1 * kp * error 
+        if error == width / 2.0: 
+            proportional *= -1
+        if abs(error) > 300:
+            proportional *= 3
+        move.linear.x = 0.5
+        
+        if self.lastError == None:
+            self.lastError = error
+        derivative = kd * (error - self.lastError)
+        self.lastError = error
+
+        #print(proportional)
+        move.angular.z = proportional + derivative
+
+        #cv.imshow("image", cvImage)
+        cv.waitKey(3)
+
+        self.pubSpeed.publish(move)
 
 class Interface:
 

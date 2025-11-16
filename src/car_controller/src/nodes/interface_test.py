@@ -27,7 +27,7 @@ class Interface(QtWidgets.QMainWindow):
     def __init__(self,):
         super(Interface, self).__init__()
 
-        # Load your UI
+        # Load interface
         uic.loadUi("/home/fizzer/ros_ws/src/car_controller/src/nodes/353Competition.ui", self)
 
         self.frame = None
@@ -90,7 +90,7 @@ class Interface(QtWidgets.QMainWindow):
         self.frame = cvImage
     
     def convert_cv_to_pixmap(self, cv_img):
-        # Ensure image is contiguous
+        # Ensure image remains the same in memory
         cv_img = cv_img.copy()
         # Convert BGR to RGB
         cv_img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
