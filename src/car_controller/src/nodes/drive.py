@@ -32,12 +32,19 @@ class Car:
         self.state = "drive, gray road, before ped"
         self.lastError = None
 
-        while not rospy.is_shutdown():
-            self.subClock = rospy.Subscriber('/clock', Clock)
-            self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
-            self.pubSpeed = rospy.Publisher('/B1/cmd_vel', Twist, queue_size=1)
-            self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
+        self.subClock = rospy.Subscriber('/clock', Clock)
+        self.pubSpeed = rospy.Publisher('/B1/cmd_vel', Twist, queue_size=1)
+        self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
+
+        self.pubScore.publish("Team 7,password,0,NA")
         
+        while not rospy.is_shutdown():
+            
+            self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
+            
+            if self.subClock.secs > 240: 
+                self.pubScore.publish("Team 7,password,-1,NA")
+
             rate.sleep()
 
     def respawn(self, position):
