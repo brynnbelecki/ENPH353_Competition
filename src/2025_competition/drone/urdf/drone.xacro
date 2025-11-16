@@ -1,6 +1,7 @@
-<?xml version="1.0"?>
-<robot name="iris" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- ignore this file, the launch file is the .sdf file-->
 
+<!-- <?xml version="1.0"?>
+<robot name="iris" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
  <!-- Base link -->
  <link name="base_link">
@@ -90,27 +91,24 @@
      <always_on>true</always_on>
      <update_rate>1000</update_rate>
      <plugin name="gazebo_ros_imu" filename="libgazebo_ros_imu.so">
-       <robotNamespace>/custom_iris</robotNamespace>
+       <robotNamespace/>
        <frameName>base_link</frameName>
      </plugin>
    </sensor>
  </gazebo>
 
 
- <!-- PX4 Gazebo Interface Plugin -->
+ <!-- PX4 Gazebo Interface Plugin
  <gazebo>
    <plugin name="gazebo_mavlink_interface" filename="libgazebo_mavlink_interface.so">
-     <robot_namespace>/custom_iris</robot_namespace>
+     <robot_namespace>B2</robot_namespace>
      <motor_velocity_reference>rotor_speed</motor_velocity_reference>
      <imu>
        <link_name>base_link</link_name>
        <sensor_name>imu_sensor</sensor_name>
      </imu>
    </plugin>
- </gazebo>
-
-
-
+ </gazebo> -->
 
 </robot>
-
+ -->
