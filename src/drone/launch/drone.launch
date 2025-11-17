@@ -1,0 +1,16 @@
+<launch>
+  <arg name="robot_name"/>
+  <arg name="init_pose"/>
+  <arg name="model" default="$(find drone)/urdf/drone.xacro"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+        args="$(arg init_pose) -unpause -urdf -model $(arg robot_name) -param robot_description" respawn="false" output="screen" />
+
+  <node name="D1_stabilizer" pkg="drone" type="stabilizer.py"
+      output="screen" respawn="false"/>
+
+  <node name="D1_linear" pkg="drone" type="linear_control.py"
+        output="screen" respawn="false"/>
+</launch>
