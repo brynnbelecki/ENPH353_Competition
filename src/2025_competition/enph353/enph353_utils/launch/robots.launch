@@ -22,16 +22,13 @@
 		<!-- Add teleop_keyboard controller -->
 		<include file="$(find enph353_utils)/launch/desktop.launch"/>
 	</group>
-
-<!-- Launch Drone sdf -->
-	<!-- <group ns="B2">
-		<param name="tf_prefix" value="B2_tf" />
+	<group ns="D1">
+		<param name="tf_prefix" value="D1_tf"/>
 		<include file="$(find drone)/launch/drone.launch">
-			<arg name="init_pose" value="-x 5.5 -y 2.5 -z 0.2 -R 0.0 -P 0.0 -Y -1.57" />
-			<arg name="robot_name"  value="B2" />
-		</include> -->
-		<!-- Add teleop_keyboard controller: this is cmd_vel!! -->
-		<!-- <include file="$(find enph353_utils)/launch/desktop.launch"/>
-	</group>  -->
+			<arg name="init_pose" value="-x 5.5 -y 2.2 -z 0.5 -R 0.0 -P 0.0 -Y -1.57" />
+			<arg name="robot_name"  value="D1" />
+		</include>
+	</group>
+
 
 </launch>
