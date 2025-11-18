@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# Dont use this script
+
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image

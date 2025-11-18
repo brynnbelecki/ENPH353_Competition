@@ -31,21 +31,27 @@ class Car:
         
         self.state = "drive, gray road, before ped"
         self.lastError = None
+        self.start = True
+        self.time = Clock()
 
-        self.subClock = rospy.Subscriber('/clock', Clock)
-        self.pubSpeed = rospy.Publisher('/B1/cmd_vel', Twist, queue_size=1)
-        self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
-
-        self.pubScore.publish("Team 7,password,0,NA")
-        
         while not rospy.is_shutdown():
             
             self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
+            self.subClock = rospy.Subscriber('/clock', Clock, self.getTime)
+            self.pubSpeed = rospy.Publisher('/B1/cmd_vel', Twist, queue_size=1)
+            self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
+
+            if self.start:
+                self.pubScore.publish("Team 7,password,0,NA")
+                self.start = False
             
-            if self.subClock.secs > 240: 
+            if self.time.clock.to_sec()  > 240:
                 self.pubScore.publish("Team 7,password,-1,NA")
 
             rate.sleep()
+
+    def getTime(self, time):
+        self.time = time
 
     def respawn(self, position):
         msg = ModelState()
@@ -81,6 +87,8 @@ class Car:
             except CvBridgeError as e:
                 rospy.logerr(e)
             
+            self.drive(cvImage)
+            
             self.last_processed_time = current_time
 
     ## Line following algorithm
@@ -91,6 +99,7 @@ class Car:
         move = Twist()
 
         gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
+        b, g, r = cv.split(cvImage)
         
         THRESHOLD = 100 #From looking at printed frame
         _, threshold = cv.threshold(gray, THRESHOLD, 255, cv.THRESH_BINARY)
@@ -119,8 +128,8 @@ class Car:
                 elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
                     right2 = x
 
-        print("size")
-        print(cvImage.shape)
+        # print("size")
+        # print(cvImage.shape)
 
         print("left1")
         print(left1)
