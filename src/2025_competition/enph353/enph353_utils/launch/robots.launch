@@ -36,6 +36,4 @@
 			<arg name="robot_name"  value="D2" />
 		</include>
 	</group>
-
-
 </launch>
