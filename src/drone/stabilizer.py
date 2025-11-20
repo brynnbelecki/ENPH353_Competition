@@ -4,9 +4,10 @@ from sensor_msgs.msg import Imu
 from geometry_msgs.msg import Twist
 from rosgraph_msgs.msg import Clock
 import tf.transformations as tft
+import math
 
 class DronePIDController:
-    def __init__(self, namespace="D1"):
+    def __init__(self, namespace):
         self.ns = namespace
         rospy.init_node(f'{self.ns}_pid_stabilizer', anonymous=True)
 
@@ -17,9 +18,9 @@ class DronePIDController:
         self.sub_imu = rospy.Subscriber(f'/{self.ns}/imu/data', Imu, self.imu_callback)
         self.sub_clock = rospy.Subscriber('/clock', Clock, self.clock_callback)
 
-        self.roll_gains  = [15, 0, 2]
-        self.pitch_gains = [5, 0, 2]
-        self.yaw_gains   = [5, 0, 2]
+        self.roll_gains  = [0.01, 0.0, 0.01]
+        self.pitch_gains = [0.01, 0.0, 0.01]
+        self.yaw_gains   = [0.01, 0.0, 0.01]
 
         self.prev_error = {'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0}
         self.integral   = {'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0}
@@ -55,6 +56,7 @@ class DronePIDController:
         # Convert quaternion to Euler angles (roll, pitch, yaw)
         q = msg.orientation
         roll, pitch, yaw = tft.euler_from_quaternion([q.x, q.y, q.z, q.w])
+        yaw = (yaw + math.pi) % (2*math.pi) - math.pi
         angles = {'roll': roll, 'pitch': pitch, 'yaw': yaw}
 
         cmd = Twist()
@@ -69,15 +71,17 @@ class DronePIDController:
             self.prev_error[axis] = error
 
             if axis == 'roll':
-                cmd.angular.x = output
+                cmd.angular.x = 0
             elif axis == 'pitch':
-                cmd.angular.y = output
+                cmd.angular.y = 0
             else:
-                cmd.angular.z = output
+                cmd.angular.z = 0
+        
+        self.pub_cmd.publish(cmd)
 
-        #rospy.loginfo(f"[PID] Time: {self.current_time:.2f}, "
-                   # f"Roll Error: {self.prev_error['roll']:.3f}, Pitch Error: {self.prev_error['pitch']:.3f}, Yaw Error: {self.prev_error['yaw']:.3f}, "
-                    #f"Torques -> Roll: {cmd.angular.x:.2f}, Pitch: {cmd.angular.y:.2f}, Yaw: {cmd.angular.z:.2f}")
+        #rospy.loginfo(
+         #          f"Roll Error: {self.prev_error['roll']:.3f}, Pitch Error: {self.prev_error['pitch']:.3f}, Yaw Error: {self.prev_error['yaw']:.3f}, "
+          #          f"Torques -> Roll: {cmd.angular.x:.2f}, Pitch: {cmd.angular.y:.2f}, Yaw: {cmd.angular.z:.2f}")
 
 
 if __name__ == "__main__":

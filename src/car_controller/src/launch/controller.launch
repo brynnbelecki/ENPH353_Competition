@@ -1,11 +1,6 @@
 <launch>
 	<node pkg="car_controller"
-         type="interface_test.py"
+         type="subscriber.py"
          name="controller" 
-         output="screen"/>
-
-	<node pkg="car_controller"
-         type="drive.py"
-         name="driver" 
          output="screen"/>
 </launch>

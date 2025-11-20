@@ -15,9 +15,6 @@ print_usage() {
   echo "-w to enable wind"
 }
 
-echo 'export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:/home/fizzer/PX4/Firmware/build/px4_sitl_default/build_gazebo-classic/px4_sitl_default/build_gazebo'
-
-
 while getopts 'vpglw' flag; do
   case "${flag}" in
     v) spawn_vehicles='true' ;;

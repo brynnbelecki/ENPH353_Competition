@@ -82,7 +82,7 @@ private:
         if (link)
         {
             link->AddForce(this->cmdForce);
-            link->AddTorque(this->cmdTorque);
+            link->SetAngularVel(this->cmdTorque);
         }
     }
 
