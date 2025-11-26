@@ -32,6 +32,7 @@ class Car:
         self.state = "drive, gray road, before ped"
         self.lastError = None
         self.start = True
+        count = 0
         self.time = Clock()
 
         while not rospy.is_shutdown():
@@ -42,8 +43,12 @@ class Car:
             self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
 
             if self.start:
-                self.pubScore.publish("Team 7,password,0,NA")
-                self.start = False
+                self.pubScore.publish(f"Team 7,password,0,NA")
+                count += 1
+                if count == 10:
+                    self.start = False
+                #self.start = False
+                #print("start")
             
             if self.time.clock.to_sec()  > 240:
                 self.pubScore.publish("Team 7,password,-1,NA")
@@ -131,15 +136,15 @@ class Car:
         # print("size")
         # print(cvImage.shape)
 
-        print("left1")
-        print(left1)
-        print("right1")
-        print(right1)
+        # print("left1")
+        # print(left1)
+        # print("right1")
+        # print(right1)
 
-        print("left2")
-        print(left2)
-        print("right2")
-        print(right2)
+        # print("left2")
+        # print(left2)
+        # print("right2")
+        # print(right2)
 
         lineLoc = (right1 + left2) / 2.0 #middle of line
         #print(left2 - right1)
@@ -168,19 +173,6 @@ class Car:
         cv.waitKey(3)
 
         self.pubSpeed.publish(move)
-
-class Interface:
-
-    ## Converts cv image to pixmap format
-    #
-    # Source: stackoverflow.com/questions/34232632/
-    def convert_cv_to_pixmap(self, cv_img):
-        cv_img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
-        height, width, channel = cv_img.shape
-        bytesPerLine = channel * width
-        q_img = QtGui.QImage(cv_img.data, width, height, 
-                        bytesPerLine, QtGui.QImage.Format_RGB888)
-        return QtGui.QPixmap.fromImage(q_img)
 
 if __name__ == "__main__":
     car = Car()

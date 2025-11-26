@@ -1,0 +1,22 @@
+15:47:23.943: Clue SIZE: UNKNOWN
+15:47:23.944: Clue VICTIM: MAGIC MIKE
+15:47:23.944: Clue CRIME: DISAPPEAR
+15:47:23.947: Clue TIME: CIRCUS
+15:47:23.947: Clue PLACE: WORMHOLE
+15:47:23.947: Clue MOTIVE: STARDOM
+15:47:23.947: Clue WEAPON: QUANTUM WAND
+15:47:23.947: Clue BANDIT: CLOWN CLAUDE
+15:48:06.213: Message received: Team 7,password,0,NA
+15:48:06.213: Timer started.
+15:48:06.234: Message received: Team 7,password,0,NA
+15:48:06.235: Timer started.
+15:48:06.271: Message received: Team 7,password,0,NA
+15:48:06.271: Timer started.
+15:48:06.303: Message received: Team 7,password,0,NA
+15:48:06.303: Timer started.
+15:48:06.334: Message received: Team 7,password,0,NA
+15:48:06.335: Timer started.
+15:48:06.372: Message received: Team 7,password,0,NA
+15:48:06.373: Timer started.
+15:48:06.406: Message received: Team 7,password,0,NA
+15:48:06.407: Timer started.

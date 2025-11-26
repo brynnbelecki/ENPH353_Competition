@@ -82,7 +82,7 @@ class Interface(QtWidgets.QMainWindow):
             rospy.logerr(e)
 
         #look for signs every 50 frames
-        if self.imNum % 20 == 0:
+        if self.imNum % 50 == 0:
             #print frames to Pictures folder (used to train YOLO)
             #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Pictures/drive{self.imNum}.png', self.frame)
             
@@ -118,7 +118,7 @@ class Interface(QtWidgets.QMainWindow):
 
                 message = modelLetters(source=cropped_image_np, conf=0.25, save=True, project = "/home/fizzer/ros_ws/src/car_controller/neural/Read20251117")
                 letters = message[0].plot()
-                self.frame = letters
+                self.frame = annotated_image_np
 
     def lineFollow(cvImage):
         gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
