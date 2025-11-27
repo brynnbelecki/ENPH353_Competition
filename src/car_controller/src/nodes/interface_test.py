@@ -48,7 +48,7 @@ class Interface(QtWidgets.QMainWindow):
 
     def update_image(self):
         rospy.init_node('topicPublisher')
-        self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
+        self.subCamera = rospy.Subscriber("/B1/rrbot/camera2/image_raw", Image, self.process)
 
         try:
             frame = self.frame
@@ -82,18 +82,19 @@ class Interface(QtWidgets.QMainWindow):
             rospy.logerr(e)
 
         #look for signs every 50 frames
-        if self.imNum % 50 == 0:
+        if self.imNum % 20 == 0:
             #print frames to Pictures folder (used to train YOLO)
             #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Pictures/drive{self.imNum}.png', self.frame)
             
-            self.YOLO(cvImage)
+            #self.YOLO(cvImage)
+            self.frame = self.lineFollow(cvImage)
         
         self.imNum += 1
 
     def YOLO(self, cvImage):
          ### YOLO
         modelSign = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/FindSign.pt")
-        modelLetters = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/ReadSignLetters.pt")
+        modelLetters = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/20251125_2.pt")
 
         # Only include if model > 80% confident    
         results = modelSign(source=cvImage, conf = 0.80, show=False)
@@ -116,19 +117,23 @@ class Interface(QtWidgets.QMainWindow):
                 x1, y1, x2, y2 = map(int, box[0])
                 cropped_image_np = cvImage[y1:y2, x1:x2]
 
-                message = modelLetters(source=cropped_image_np, conf=0.25, save=True, project = "/home/fizzer/ros_ws/src/car_controller/neural/Read20251117")
+                message = modelLetters(source=cropped_image_np, conf=0.25, save=True, project = "/home/fizzer/ros_ws/src/car_controller/neural/Read20251126")
                 letters = message[0].plot()
                 self.frame = annotated_image_np
 
-    def lineFollow(cvImage):
+    def lineFollow(self, cvImage):
         gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-        b, g, r = cv.split(cvImage)
+        blur1 = cv.blur(cvImage, (10,10))
+        blur2 = cv.blur(blur1, (10,10))
+        b, g, r = cv.split(blur2)
         
-        THRESHOLD = 130 #From looking at printed frame
+        THRESHOLD = 140 #From looking at printed frame
         _, threshold = cv.threshold(b, THRESHOLD, 255, cv.THRESH_BINARY)
 
+        HEIGHT = 250
+
         height, width, __ = cvImage.shape
-        line_height = height - 300
+        line_height = height - HEIGHT
         start_point = (0, line_height)
         end_point = (width - 1, line_height)
         line_color = (0,0,255)
@@ -141,7 +146,7 @@ class Interface(QtWidgets.QMainWindow):
         left2 = width / 2
         right2 = width / 2
         found = False
-        y = height - 250
+        y = height - HEIGHT
         for x in range(1, width):
             if not found:
                 if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
@@ -165,7 +170,7 @@ class Interface(QtWidgets.QMainWindow):
                 line_thickness = 2
                 cv.line(cvImage, start_point, end_point, line_color, line_thickness)
 
-        return cvImage
+        return threshold
     
     def convert_cv_to_pixmap(self, cv_img):
         # Ensure image remains the same in memory

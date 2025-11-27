@@ -16,6 +16,11 @@ import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from python_qt_binding import loadUi
 
+POSITION1 = [5.5, 2.5, 0.2, 0.0, 0.0, -0.7071, 0.7071]
+POSITION2 = [0.53, -0.0079, 0.2, 0.0, 0.0, 0.7071, 0.7071]
+POSITION3 = [3.93, -0.42, 0.2, 0.0, 0.0, 1, 0]
+POSITION4 = [3.93, -2.27, 0.2, 0.0, 0.0, 0, 1]
+
 class Car:
 
     def __init__(self):
@@ -23,7 +28,7 @@ class Car:
 
         # initial position from robot.launch file
         # -x 5.5 -y 2.5 -z 0.2 -R 0.0 -P 0.0 -Y -1.57 
-        self.respawn([5.5, 2.5, 0.2, 0.0, 0.0, -0.7071, 0.7071])
+        self.respawn(POSITION2)
 
         rate = rospy.Rate(30)
         self.last_processed_time = time.time()
@@ -84,7 +89,6 @@ class Car:
         current_time = time.time()
         if current_time - self.last_processed_time >= self.min_interval:
             
-    
             #convert image to cv encoding and display
             cvBridge = CvBridge()
             try:
@@ -104,14 +108,18 @@ class Car:
         move = Twist()
 
         gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-        b, g, r = cv.split(cvImage)
-        
+        blur1 = cv.blur(cvImage, (10,10))
+        blur2 = cv.blur(blur1, (10,10))
+        b, g, r = cv.split(blur2)
+
+        HEIGHT = 250
         THRESHOLD = 100 #From looking at printed frame
-        _, threshold = cv.threshold(gray, THRESHOLD, 255, cv.THRESH_BINARY)
+        THRESHOLD_B = 130
+        _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
         height, width = threshold.shape
 
         error = 0
-        kp = 0.005
+        kp = 0.015 #0.005 for threshold, 0.015 for blue road, 
         kd = 0.000
 
         left1 = width / 2
@@ -119,7 +127,7 @@ class Car:
         left2 = width / 2
         right2 = width / 2
         found = False
-        y = height - 250
+        y = height - HEIGHT #250 for 800x800 pixel camera 
         for x in range(1, width):
             if not found:
                 if threshold[y - 1, x-1] - threshold[y - 1, x] == 1:            
@@ -133,18 +141,18 @@ class Car:
                 elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
                     right2 = x
 
-        # print("size")
-        # print(cvImage.shape)
+        print("size")
+        print(cvImage.shape)
 
-        # print("left1")
-        # print(left1)
-        # print("right1")
-        # print(right1)
+        print("left1")
+        print(left1)
+        print("right1")
+        print(right1)
 
-        # print("left2")
-        # print(left2)
-        # print("right2")
-        # print(right2)
+        print("left2")
+        print(left2)
+        print("right2")
+        print(right2)
 
         lineLoc = (right1 + left2) / 2.0 #middle of line
         #print(left2 - right1)
@@ -152,12 +160,12 @@ class Car:
         # print(lineLoc)
         #error is deviation from middle of screen 
         error = width / 2.0 - lineLoc
-        #print(error)
+        print(f"error: {error}")
         
         proportional = -1 * kp * error 
         if error == width / 2.0: 
             proportional *= -1
-        if abs(error) > 300:
+        if abs(error) > 300: #300
             proportional *= 3
         move.linear.x = 0.5
         
@@ -168,9 +176,10 @@ class Car:
 
         #print(proportional)
         move.angular.z = proportional + derivative
+        print(f"movement: {move.angular.z}")
 
         #cv.imshow("image", cvImage)
-        cv.waitKey(3)
+        #cv.waitKey(3)
 
         self.pubSpeed.publish(move)
 
