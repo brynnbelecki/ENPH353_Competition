@@ -15,7 +15,7 @@ from gazebo_msgs.msg import ModelState #illegal for actual competition
 from gazebo_msgs.srv import SetModelState
 
 import cv2 as cv
-from cv_bridge import CvBridge, CvBridgeError
+from cv_bridge import CvBridge, CvBridgeError 
 import time
 
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
@@ -48,7 +48,7 @@ class Interface(QtWidgets.QMainWindow):
 
     def update_image(self):
         rospy.init_node('topicPublisher')
-        self.subCamera = rospy.Subscriber("/B1/rrbot/camera2/image_raw", Image, self.process)
+        self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
 
         try:
             frame = self.frame
@@ -82,9 +82,9 @@ class Interface(QtWidgets.QMainWindow):
             rospy.logerr(e)
 
         #look for signs every 50 frames
-        if self.imNum % 20 == 0:
+        if self.imNum % 100 == 0:
             #print frames to Pictures folder (used to train YOLO)
-            #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Pictures/drive{self.imNum}.png', self.frame)
+            cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run2/drive{self.imNum}.png', self.frame)
             
             #self.YOLO(cvImage)
             self.frame = self.lineFollow(cvImage)
@@ -122,16 +122,68 @@ class Interface(QtWidgets.QMainWindow):
                 self.frame = annotated_image_np
 
     def lineFollow(self, cvImage):
-        gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-        blur1 = cv.blur(cvImage, (10,10))
-        blur2 = cv.blur(blur1, (10,10))
-        b, g, r = cv.split(blur2)
+        # gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
+        # blur = cv.GaussianBlur(gray, (9,9), 0)
+        # blur = cv.bilateralFilter(blur,50,40,75)
+        # blur1 = cv.blur(cvImage, (10,10))
+        # blur2 = cv.blur(blur1, (10,10))
+        # #b, g, r = cv.split(blur)
+
+        b, g, r = cv.split(cvImage)
+
+        HEIGHT = 350
+        THRESHOLD = 165 #From looking at printed frame
+        THRESHOLD_B = 140
+        _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
+        height, width = threshold.shape
+
+        #remove blobs from thresholded line image to extract line
+        nb_blobs, im_with_separated_blobs, stats, _ = cv.connectedComponentsWithStats(threshold)
+        sizes = stats[:, cv.CC_STAT_AREA]
+        width_s = stats[:, cv.CC_STAT_WIDTH]
+        height_s = stats[:, cv.CC_STAT_HEIGHT]
         
-        THRESHOLD = 140 #From looking at printed frame
-        _, threshold = cv.threshold(b, THRESHOLD, 255, cv.THRESH_BINARY)
+        min_size = 1500 
+        #min_aspect_ratio = 5
+        #or (height_s[index_blob] / width_s[index_blob]) > min_aspect_ratio
 
-        HEIGHT = 250
+        im_result = np.zeros_like(im_with_separated_blobs)
+        im_result = im_result.astype(np.uint8)
 
+        #and not abs((height_s[index_blob] / width_s[index_blob]) - 1) < .1
+
+        for index_blob in range(1, nb_blobs):
+            if sizes[index_blob] >= min_size and not abs((height_s[index_blob] / width_s[index_blob]) - 1) < 0.5:
+                # print(f"height: {height_s[index_blob]}")
+                # print(f"width: {width_s[index_blob]}")
+                im_result[im_with_separated_blobs == index_blob] = 255
+        threshold = im_result
+
+
+        # HEIGHT = 250
+        # THRESHOLD = 165 #From looking at printed frame
+        # THRESHOLD_B = 130
+        # _, threshold = cv.threshold(blur, THRESHOLD, 255, cv.THRESH_BINARY)
+        # height, width = threshold.shape
+
+        # #remove blobs from thresholded line image to extract line
+        # nb_blobs, im_with_separated_blobs, stats, _ = cv.connectedComponentsWithStats(threshold)
+        # sizes = stats[:, cv.CC_STAT_AREA]
+        # width = stats[:, cv.CC_STAT_WIDTH]
+        # height = stats[:, cv.CC_STAT_HEIGHT]
+        
+        # min_size = 2000  
+        # min_aspect_ratio = 5
+
+        # im_result = np.zeros_like(im_with_separated_blobs)
+        # im_result = im_result.astype(np.uint8)
+
+        # for index_blob in range(1, nb_blobs):
+        #     if sizes[index_blob] >= min_size or (height[index_blob] / width[index_blob]) > min_aspect_ratio:
+        #         im_result[im_with_separated_blobs == index_blob] = 255
+        # threshold = im_result
+
+        HEIGHT = 330
         height, width, __ = cvImage.shape
         line_height = height - HEIGHT
         start_point = (0, line_height)
@@ -170,7 +222,7 @@ class Interface(QtWidgets.QMainWindow):
                 line_thickness = 2
                 cv.line(cvImage, start_point, end_point, line_color, line_thickness)
 
-        return threshold
+        return cvImage
     
     def convert_cv_to_pixmap(self, cv_img):
         # Ensure image remains the same in memory

@@ -16,6 +16,8 @@ import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from python_qt_binding import loadUi
 
+import numpy as np
+
 POSITION1 = [5.5, 2.5, 0.2, 0.0, 0.0, -0.7071, 0.7071]
 POSITION2 = [0.53, -0.0079, 0.2, 0.0, 0.0, 0.7071, 0.7071]
 POSITION3 = [3.93, -0.42, 0.2, 0.0, 0.0, 1, 0]
@@ -32,7 +34,7 @@ class Car:
 
         rate = rospy.Rate(30)
         self.last_processed_time = time.time()
-        self.min_interval = 0.01
+        self.min_interval = 0.2
         
         self.state = "drive, gray road, before ped"
         self.lastError = None
@@ -107,20 +109,46 @@ class Car:
         #create and publish motion to robot
         move = Twist()
 
-        gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-        blur1 = cv.blur(cvImage, (10,10))
-        blur2 = cv.blur(blur1, (10,10))
-        b, g, r = cv.split(blur2)
+        #gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
+        #blur = cv.GaussianBlur(gray, (9,9), 0)
+        #blur = cv.bilateralFilter(blur,50,40,75)
+        # blur1 = cv.blur(cvImage, (10,10))
+        # blur2 = cv.blur(blur1, (10,10))
+        b, g, r = cv.split(cvImage)
 
         HEIGHT = 250
-        THRESHOLD = 100 #From looking at printed frame
-        THRESHOLD_B = 130
+        THRESHOLD = 165 #From looking at printed frame
+        THRESHOLD_B = 140
         _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
         height, width = threshold.shape
 
+        #remove blobs from thresholded line image to extract line
+        nb_blobs, im_with_separated_blobs, stats, _ = cv.connectedComponentsWithStats(threshold)
+        sizes = stats[:, cv.CC_STAT_AREA]
+        width_s = stats[:, cv.CC_STAT_WIDTH]
+        height_s = stats[:, cv.CC_STAT_HEIGHT]
+        
+        min_size = 2500 
+        #min_aspect_ratio = 5
+        #or (height_s[index_blob] / width_s[index_blob]) > min_aspect_ratio
+
+        im_result = np.zeros_like(im_with_separated_blobs)
+        im_result = im_result.astype(np.uint8)
+
+        # 
+
+        for index_blob in range(1, nb_blobs):
+            # print(f"{abs((height_s[index_blob] / width_s[index_blob])) - 1}")
+            if sizes[index_blob] >= min_size and not abs((height_s[index_blob] / width_s[index_blob]) - 1) < 0.5:
+                # print(f"height: {height_s[index_blob]}")
+                # print(f"width: {width_s[index_blob]}")
+                im_result[im_with_separated_blobs == index_blob] = 255
+        threshold = im_result
+        #print("loop")
+
         error = 0
-        kp = 0.015 #0.005 for threshold, 0.015 for blue road, 
-        kd = 0.000
+        kp = 0.023 #0.005 for threshold, 0.015 for blue road, 
+        kd = 0.005
 
         left1 = width / 2
         right1 = width / 2
@@ -141,8 +169,8 @@ class Car:
                 elif threshold[y - 1, x-1] - threshold[y - 1, x] == 255:                    
                     right2 = x
 
-        print("size")
-        print(cvImage.shape)
+        # print("size")
+        # print(cvImage.shape)
 
         print("left1")
         print(left1)
@@ -160,28 +188,32 @@ class Car:
         # print(lineLoc)
         #error is deviation from middle of screen 
         error = width / 2.0 - lineLoc
-        print(f"error: {error}")
+        
         
         proportional = -1 * kp * error 
         if error == width / 2.0: 
             proportional *= -1
         if abs(error) > 300: #300
             proportional *= 3
-        move.linear.x = 0.5
+        move.linear.x = 0.5 #0.5
         
         if self.lastError == None:
             self.lastError = error
-        derivative = kd * (error - self.lastError)
+        derivative = -1 * kd * (error - self.lastError)
         self.lastError = error
 
         #print(proportional)
         move.angular.z = proportional + derivative
-        print(f"movement: {move.angular.z}")
+        
 
         #cv.imshow("image", cvImage)
         #cv.waitKey(3)
-
-        self.pubSpeed.publish(move)
+        if abs(move.angular.z) < 6:
+            self.pubSpeed.publish(move)
+        if error != 0:
+            print(f"movement: {move.angular.z}")
+            print(f"error: {error}")
+            print(f"time: {time.time()}")
 
 if __name__ == "__main__":
     car = Car()
