@@ -118,7 +118,7 @@ class Car:
 
         HEIGHT = 250
         THRESHOLD = 165 #From looking at printed frame
-        THRESHOLD_B = 140
+        THRESHOLD_B = 125
         _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
         height, width = threshold.shape
 
@@ -195,7 +195,7 @@ class Car:
             proportional *= -1
         if abs(error) > 300: #300
             proportional *= 3
-        move.linear.x = 0.5 #0.5
+        move.linear.x = 0.1 #0.5
         
         if self.lastError == None:
             self.lastError = error

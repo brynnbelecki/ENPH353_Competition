@@ -84,7 +84,7 @@ class Interface(QtWidgets.QMainWindow):
         #look for signs every 50 frames
         if self.imNum % 100 == 0:
             #print frames to Pictures folder (used to train YOLO)
-            cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run2/drive{self.imNum}.png', self.frame)
+            #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run2/drive{self.imNum}.png', self.frame)
             
             #self.YOLO(cvImage)
             self.frame = self.lineFollow(cvImage)
@@ -131,9 +131,9 @@ class Interface(QtWidgets.QMainWindow):
 
         b, g, r = cv.split(cvImage)
 
-        HEIGHT = 350
+        HEIGHT = 250
         THRESHOLD = 165 #From looking at printed frame
-        THRESHOLD_B = 140
+        THRESHOLD_B = 125
         _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
         height, width = threshold.shape
 
