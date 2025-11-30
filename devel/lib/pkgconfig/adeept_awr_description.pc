@@ -1,4 +1,4 @@
-prefix=/home/fizzer/ros_ws/devel
+prefix=/home/fizzer/ENPH353_Competition/devel
 
 Name: adeept_awr_description
 Description: Description of adeept_awr_description

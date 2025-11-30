@@ -1,4 +1,4 @@
-prefix=/home/fizzer/ros_ws/install
+prefix=/home/fizzer/ENPH353_Competition/install
 
 Name: adeept_awr_gazebo
 Description: Description of adeept_awr_gazebo

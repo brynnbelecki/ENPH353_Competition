@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <memory>
+#include <map>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -33,7 +33,7 @@ struct GetLegalPlatesResponse_
 
 
 
-   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>> _plates_type;
+   typedef std::vector<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > , typename ContainerAllocator::template rebind<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::other >  _plates_type;
   _plates_type plates;
 
 
@@ -184,21 +184,12 @@ struct Printer< ::enph353_gazebo::GetLegalPlatesResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::enph353_gazebo::GetLegalPlatesResponse_<ContainerAllocator>& v)
   {
-    if (false || !indent.empty())
-      s << std::endl;
-    s << indent << "plates: ";
-    if (v.plates.empty() || true)
-      s << "[";
+    s << indent << "plates[]" << std::endl;
     for (size_t i = 0; i < v.plates.size(); ++i)
     {
-      if (true && i > 0)
-        s << ", ";
-      else if (!true)
-        s << std::endl << indent << "  -";
-      Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, true ? std::string() : indent + "    ", v.plates[i]);
+      s << indent << "  plates[" << i << "]: ";
+      Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.plates[i]);
     }
-    if (v.plates.empty() || true)
-      s << "]";
   }
 };
 

@@ -1,4 +1,4 @@
-prefix=/home/fizzer/ros_ws/install
+prefix=/home/fizzer/ENPH353_Competition/install
 
 Name: robbie
 Description: Description of robbie

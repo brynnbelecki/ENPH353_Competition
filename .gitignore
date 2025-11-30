@@ -1,0 +1,25 @@
+# CMake build directories
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/Makefile
+/cmake_install.cmake
+
+# Compiled libraries and executables
+*.o
+*.so
+*.a
+*.exe
+*.out
+*.dll
+
+# Other temporary files
+*.log
+*.user
+*.swp
+*.pyc
+
+# ROS / catkin
+/devel/
+/install/
+

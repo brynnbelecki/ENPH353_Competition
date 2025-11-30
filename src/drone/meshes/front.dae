@@ -22,8 +22,11 @@
       <profile_COMMON>
         <technique sid="COMMON">
           <lambert>
+            <emission>
+              <color sid="emission">0 1 1 1</color>
+            </emission>
             <diffuse>
-              <color sid="diffuse">0.01 1 1 1</color>
+              <color sid="diffuse">0 1 1 1</color>
             </diffuse>
             <transparent opaque="A_ONE">
               <color sid="transparent">1 1 1 1</color>

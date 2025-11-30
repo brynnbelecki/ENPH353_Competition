@@ -19,4 +19,12 @@
         output="screen" respawn="false">
   </node>
 
+  <node name="d2_control" pkg="drone" type="drone_2_control.py"
+        output="screen" respawn="false">
+  </node>
+
+  <node name="d2_control_angular" pkg="drone" type="drone_2_rotational.py"
+        output="screen" respawn="false">
+  </node>
+
 </launch>

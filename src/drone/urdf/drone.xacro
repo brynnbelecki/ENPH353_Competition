@@ -102,9 +102,9 @@
     <update_rate>120</update_rate>
 
     <camera>
-      <horizontal_fov>0.65</horizontal_fov>
+      <horizontal_fov>0.6</horizontal_fov>
       <image>
-        <width>1400</width>
+        <width>1500</width>
         <height>650</height>
         <format>R8G8B8</format>
       </image>
@@ -118,7 +118,7 @@
       <robotNamespace>/D1</robotNamespace>
       <cameraName>rgb_camera</cameraName>
       <frameName>rgb_camera_link</frameName>
-      <updateRate>60</updateRate>
+      <updateRate>165</updateRate>
     </plugin>
   </sensor>
 </gazebo>

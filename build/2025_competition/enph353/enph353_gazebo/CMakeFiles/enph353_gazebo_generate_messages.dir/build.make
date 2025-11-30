@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fizzer/ros_ws/src
+CMAKE_SOURCE_DIR = /home/fizzer/ENPH353_Competition/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fizzer/ros_ws/build
+CMAKE_BINARY_DIR = /home/fizzer/ENPH353_Competition/build
 
 # Utility rule file for enph353_gazebo_generate_messages.
 
@@ -63,10 +63,10 @@ enph353_gazebo_generate_messages: 2025_competition/enph353/enph353_gazebo/CMakeF
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/build
 
 2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/clean:
-	cd /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/enph353_gazebo_generate_messages.dir/cmake_clean.cmake
+	cd /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/enph353_gazebo_generate_messages.dir/cmake_clean.cmake
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/clean
 
 2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/depend:
-	cd /home/fizzer/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ros_ws/src /home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo /home/fizzer/ros_ws/build /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fizzer/ENPH353_Competition/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ENPH353_Competition/src /home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo /home/fizzer/ENPH353_Competition/build /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/enph353_gazebo_generate_messages.dir/depend
 

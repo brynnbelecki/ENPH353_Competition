@@ -1,8 +1,8 @@
-# Install script for directory: /home/fizzer/ros_ws/src/car_controller
+# Install script for directory: /home/fizzer/ENPH353_Competition/src/car_controller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fizzer/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/fizzer/ENPH353_Competition/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ros_ws/build/car_controller/catkin_generated/installspace/car_controller.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/car_controller/catkin_generated/installspace/car_controller.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/car_controller/cmake" TYPE FILE FILES
-    "/home/fizzer/ros_ws/build/car_controller/catkin_generated/installspace/car_controllerConfig.cmake"
-    "/home/fizzer/ros_ws/build/car_controller/catkin_generated/installspace/car_controllerConfig-version.cmake"
+    "/home/fizzer/ENPH353_Competition/build/car_controller/catkin_generated/installspace/car_controllerConfig.cmake"
+    "/home/fizzer/ENPH353_Competition/build/car_controller/catkin_generated/installspace/car_controllerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/car_controller" TYPE FILE FILES "/home/fizzer/ros_ws/src/car_controller/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/car_controller" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/src/car_controller/package.xml")
 endif()
 

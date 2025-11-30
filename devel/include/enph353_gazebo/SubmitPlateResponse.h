@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <memory>
+#include <map>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -184,8 +184,6 @@ struct Printer< ::enph353_gazebo::SubmitPlateResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::enph353_gazebo::SubmitPlateResponse_<ContainerAllocator>& v)
   {
-    if (false || !indent.empty())
-      s << std::endl;
     s << indent << "correct: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.correct);
   }

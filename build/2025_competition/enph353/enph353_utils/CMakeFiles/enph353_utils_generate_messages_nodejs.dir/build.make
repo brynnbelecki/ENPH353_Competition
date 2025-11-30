@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fizzer/ros_ws/src
+CMAKE_SOURCE_DIR = /home/fizzer/ENPH353_Competition/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fizzer/ros_ws/build
+CMAKE_BINARY_DIR = /home/fizzer/ENPH353_Competition/build
 
 # Utility rule file for enph353_utils_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ enph353_utils_generate_messages_nodejs: 2025_competition/enph353/enph353_utils/C
 .PHONY : 2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/build
 
 2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/clean:
-	cd /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_utils && $(CMAKE_COMMAND) -P CMakeFiles/enph353_utils_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_utils && $(CMAKE_COMMAND) -P CMakeFiles/enph353_utils_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : 2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/clean
 
 2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/depend:
-	cd /home/fizzer/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ros_ws/src /home/fizzer/ros_ws/src/2025_competition/enph353/enph353_utils /home/fizzer/ros_ws/build /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_utils /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fizzer/ENPH353_Competition/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ENPH353_Competition/src /home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_utils /home/fizzer/ENPH353_Competition/build /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_utils /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 2025_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_nodejs.dir/depend
 

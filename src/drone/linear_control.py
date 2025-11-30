@@ -75,7 +75,7 @@ class DronePIDController:
             self.start_time = self.current_time
             self.last_time = self.current_time
 
-        if not self.active and (self.current_time - self.start_time > 5):
+        if not self.active and (self.current_time - self.start_time > 1.5):
             self.active = True
             self.thrust_start_time = self.current_time
             rospy.loginfo("[PID CTRL] Activated. Initial upward thrust starting!")

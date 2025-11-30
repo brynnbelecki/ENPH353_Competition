@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/fizzer/ros_ws/devel/share/roseus/ros/enph353_gazebo/manifest.l"
-  "/home/fizzer/ros_ws/devel/share/roseus/ros/enph353_gazebo/srv/GetLegalPlates.l"
-  "/home/fizzer/ros_ws/devel/share/roseus/ros/enph353_gazebo/srv/SubmitPlate.l"
+  "/home/fizzer/ENPH353_Competition/devel/share/roseus/ros/enph353_gazebo/manifest.l"
+  "/home/fizzer/ENPH353_Competition/devel/share/roseus/ros/enph353_gazebo/srv/GetLegalPlates.l"
+  "/home/fizzer/ENPH353_Competition/devel/share/roseus/ros/enph353_gazebo/srv/SubmitPlate.l"
   "CMakeFiles/enph353_gazebo_generate_messages_eus"
 )
 

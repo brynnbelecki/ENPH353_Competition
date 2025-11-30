@@ -1,4 +1,4 @@
-prefix=/home/fizzer/ros_ws/devel
+prefix=/home/fizzer/ENPH353_Competition/devel
 
 Name: car_controller
 Description: Description of car_controller

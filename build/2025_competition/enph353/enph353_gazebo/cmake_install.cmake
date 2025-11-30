@@ -1,8 +1,8 @@
-# Install script for directory: /home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo
+# Install script for directory: /home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fizzer/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/fizzer/ENPH353_Competition/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,74 +39,74 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/srv" TYPE FILE FILES
-    "/home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo/srv/GetLegalPlates.srv"
-    "/home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo/srv/SubmitPlate.srv"
+    "/home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo/srv/GetLegalPlates.srv"
+    "/home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo/srv/SubmitPlate.srv"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/fizzer/ros_ws/devel/include/enph353_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/fizzer/ENPH353_Competition/devel/include/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/fizzer/ros_ws/devel/share/roseus/ros/enph353_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/fizzer/ENPH353_Competition/devel/share/roseus/ros/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/fizzer/ros_ws/devel/share/common-lisp/ros/enph353_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/fizzer/ENPH353_Competition/devel/share/common-lisp/ros/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/fizzer/ros_ws/devel/share/gennodejs/ros/enph353_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/fizzer/ENPH353_Competition/devel/share/gennodejs/ros/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/fizzer/ros_ws/devel/lib/python3/dist-packages/enph353_gazebo")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/fizzer/ENPH353_Competition/devel/lib/python3/dist-packages/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/fizzer/ros_ws/devel/lib/python3/dist-packages/enph353_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/fizzer/ENPH353_Competition/devel/lib/python3/dist-packages/enph353_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES
-    "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig.cmake"
-    "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig-version.cmake"
+    "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig.cmake"
+    "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo" TYPE FILE FILES "/home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazebo-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo/cmake" TYPE FILE FILES
-    "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig.cmake"
-    "/home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig-version.cmake"
+    "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig.cmake"
+    "/home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/catkin_generated/installspace/enph353_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo" TYPE FILE FILES "/home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enph353_gazebo" TYPE FILE FILES "/home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo/package.xml")
 endif()
 

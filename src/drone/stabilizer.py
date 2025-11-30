@@ -71,11 +71,11 @@ class DronePIDController:
             self.prev_error[axis] = error
 
             if axis == 'roll':
-                cmd.angular.x = 0
+                cmd.angular.x = output
             elif axis == 'pitch':
-                cmd.angular.y = 0
+                cmd.angular.y = output
             else:
-                cmd.angular.z = 0
+                cmd.angular.z = output
         
         self.pub_cmd.publish(cmd)
 

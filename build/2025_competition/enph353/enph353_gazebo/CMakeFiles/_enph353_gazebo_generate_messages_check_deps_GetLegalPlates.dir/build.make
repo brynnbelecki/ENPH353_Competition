@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fizzer/ros_ws/src
+CMAKE_SOURCE_DIR = /home/fizzer/ENPH353_Competition/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fizzer/ros_ws/build
+CMAKE_BINARY_DIR = /home/fizzer/ENPH353_Competition/build
 
 # Utility rule file for _enph353_gazebo_generate_messages_check_deps_GetLegalPlates.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/fizzer/ros_ws/build
 include 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/progress.make
 
 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates:
-	cd /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py enph353_gazebo /home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo/srv/GetLegalPlates.srv 
+	cd /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo && ../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py enph353_gazebo /home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo/srv/GetLegalPlates.srv 
 
 _enph353_gazebo_generate_messages_check_deps_GetLegalPlates: 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates
 _enph353_gazebo_generate_messages_check_deps_GetLegalPlates: 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/build.make
@@ -67,10 +67,10 @@ _enph353_gazebo_generate_messages_check_deps_GetLegalPlates: 2025_competition/en
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/build
 
 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/clean:
-	cd /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/cmake_clean.cmake
+	cd /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/cmake_clean.cmake
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/clean
 
 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/depend:
-	cd /home/fizzer/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ros_ws/src /home/fizzer/ros_ws/src/2025_competition/enph353/enph353_gazebo /home/fizzer/ros_ws/build /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo /home/fizzer/ros_ws/build/2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fizzer/ENPH353_Competition/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fizzer/ENPH353_Competition/src /home/fizzer/ENPH353_Competition/src/2025_competition/enph353/enph353_gazebo /home/fizzer/ENPH353_Competition/build /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo /home/fizzer/ENPH353_Competition/build/2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 2025_competition/enph353/enph353_gazebo/CMakeFiles/_enph353_gazebo_generate_messages_check_deps_GetLegalPlates.dir/depend
 
