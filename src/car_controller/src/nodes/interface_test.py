@@ -24,56 +24,59 @@ from python_qt_binding import loadUi
 
 from ultralytics import YOLO
 
+debugLineFollow = False #shows linefollowing image if True, shows extracted signs if False
+showLine = True #shows image with extracted lines if True, thresholded image if False
+debug = True #print statements
+interface = True #show interface
+
 class Interface(QtWidgets.QMainWindow):
     def __init__(self,):
-        super(Interface, self).__init__()
+        if interface:
+            super(Interface, self).__init__()
+            # Load interface
+            uic.loadUi("/home/fizzer/ros_ws/src/car_controller/src/nodes/353Competition.ui", self)
 
-        # Load interface
-        uic.loadUi("/home/fizzer/ros_ws/src/car_controller/src/nodes/353Competition.ui", self)
+            self.frame = None
+            self.imNum = 0
 
-        self.frame = None
-        self.imNum = 0
+            # Make QLabel scale pixmaps to fit
+            self.Camera.setScaledContents(True)
 
-        # Make QLabel scale pixmaps to fit
-        self.Camera.setScaledContents(True)
+            # Start a timer to simulate live camera updates
+            self.timer = QtCore.QTimer()
+            self.timer.timeout.connect(self.update_image)
+            self.timer.start(100)  # update every 100 ms (~10 FPS)
 
-        # Start a timer to simulate live camera updates
-        self.timer = QtCore.QTimer()
-        self.timer.timeout.connect(self.update_image)
-        self.timer.start(100)  # update every 100 ms (~10 FPS)
-
-        # Create a dummy frame
-        self.frame = np.zeros((800, 800, 3), dtype=np.uint8)
-        cv.putText(self.frame, "Test Frame", (50, 400), cv.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
-
+    ## Polls camera and runs interface
     def update_image(self):
         rospy.init_node('topicPublisher')
-        self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
+        if debugLineFollow:
+            self.subCamera = rospy.Subscriber("/B1/rrbot/camera1/image_raw", Image, self.process)
+        else:
+            self.subCamera = rospy.Subscriber("/B1/rrbot/camera2/image_raw", Image, self.process) 
 
-        try:
-            frame = self.frame
+        if interface:
+            #runs debug interface
+            try: 
+                frame = self.frame
 
-            if frame is None:
-                print("No frame available")
-                return
-        
-            #print("Frame shape:", frame.shape)
+                if frame is None:
+                    print("No frame available")
+                    return
 
-            pixmap = self.convert_cv_to_pixmap(frame)
+                pixmap = self.convert_cv_to_pixmap(frame)
 
-            if pixmap is None:
-                print("Pixmap conversion failed")
-                return
+                if pixmap is None:
+                    return
+                self.Camera.setScaledContents(True)
+                self.Camera.setPixmap(pixmap)
+                self.Camera.repaint()   # optional, forces UI update
+                self.show()
 
-            self.Camera.setScaledContents(True)
-            self.Camera.setPixmap(pixmap)
-            self.Camera.repaint()   # optional, forces UI update
-            self.show()
-            #print("Image updated")
+            except Exception as e:
+                print("Image update error:", e)
 
-        except Exception as e:
-            print("Image update error:", e)
-
+    ## Processes input images
     def process(self, image):
         cvBridge = CvBridge()
         try:
@@ -81,18 +84,25 @@ class Interface(QtWidgets.QMainWindow):
         except CvBridgeError as e:
             rospy.logerr(e)
 
+        self.frame = cvImage
         #look for signs every 50 frames
-        if self.imNum % 100 == 0:
+        if self.imNum % 10 == 0:
             #print frames to Pictures folder (used to train YOLO)
-            #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run2/drive{self.imNum}.png', self.frame)
+            if self.imNum % 30 == 0:
+                cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run3/drive{self.imNum}.png', self.frame)
             
-            #self.YOLO(cvImage)
-            self.frame = self.lineFollow(cvImage)
+            if debugLineFollow:
+                self.frame = self.lineFollow(cvImage)
+            else:  
+                self.YOLO(cvImage)  
         
         self.imNum += 1
 
+    ## runs sign YOLO model on image to extract sign and then on sign to extract individual letters
+    #
+    #< @param cvImage the input image
     def YOLO(self, cvImage):
-         ### YOLO
+        # Trained YOLO models
         modelSign = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/FindSign.pt")
         modelLetters = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/20251125_2.pt")
 
@@ -117,23 +127,23 @@ class Interface(QtWidgets.QMainWindow):
                 x1, y1, x2, y2 = map(int, box[0])
                 cropped_image_np = cvImage[y1:y2, x1:x2]
 
-                message = modelLetters(source=cropped_image_np, conf=0.25, save=True, project = "/home/fizzer/ros_ws/src/car_controller/neural/Read20251126")
+                message = modelLetters(source=cropped_image_np, conf=0.25, save=False, project = "/home/fizzer/ros_ws/src/car_controller/neural/Read20251129")
                 letters = message[0].plot()
+                print(f"message: {message[0]}")
                 self.frame = annotated_image_np
 
+
+    ## Determine where car sees lines on image and show thresholded image  
+    #
+    #< @param cvImage the input image
+    #< @return the processed image
     def lineFollow(self, cvImage):
-        # gray = cv.cvtColor(cvImage, cv.COLOR_BGR2GRAY)
-        # blur = cv.GaussianBlur(gray, (9,9), 0)
-        # blur = cv.bilateralFilter(blur,50,40,75)
-        # blur1 = cv.blur(cvImage, (10,10))
-        # blur2 = cv.blur(blur1, (10,10))
-        # #b, g, r = cv.split(blur)
 
         b, g, r = cv.split(cvImage)
 
         HEIGHT = 250
         THRESHOLD = 165 #From looking at printed frame
-        THRESHOLD_B = 125
+        THRESHOLD_B = 110
         _, threshold = cv.threshold(b, THRESHOLD_B, 255, cv.THRESH_BINARY)
         height, width = threshold.shape
 
@@ -143,19 +153,15 @@ class Interface(QtWidgets.QMainWindow):
         width_s = stats[:, cv.CC_STAT_WIDTH]
         height_s = stats[:, cv.CC_STAT_HEIGHT]
         
-        min_size = 1500 
+        min_size = 1000
         #min_aspect_ratio = 5
         #or (height_s[index_blob] / width_s[index_blob]) > min_aspect_ratio
 
         im_result = np.zeros_like(im_with_separated_blobs)
         im_result = im_result.astype(np.uint8)
 
-        #and not abs((height_s[index_blob] / width_s[index_blob]) - 1) < .1
-
         for index_blob in range(1, nb_blobs):
             if sizes[index_blob] >= min_size and not abs((height_s[index_blob] / width_s[index_blob]) - 1) < 0.5:
-                # print(f"height: {height_s[index_blob]}")
-                # print(f"width: {width_s[index_blob]}")
                 im_result[im_with_separated_blobs == index_blob] = 255
         threshold = im_result
 
@@ -222,8 +228,12 @@ class Interface(QtWidgets.QMainWindow):
                 line_thickness = 2
                 cv.line(cvImage, start_point, end_point, line_color, line_thickness)
 
-        return cvImage
+        if showLine:
+            return cvImage
+        else:
+            return threshold
     
+    ## convert cv image to pixmap format
     def convert_cv_to_pixmap(self, cv_img):
         # Ensure image remains the same in memory
         cv_img = cv_img.copy()
@@ -234,10 +244,10 @@ class Interface(QtWidgets.QMainWindow):
         q_img = QtGui.QImage(cv_img.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
         return QtGui.QPixmap.fromImage(q_img)
 
-
 if __name__ == "__main__":
     print("init")
     app = QtWidgets.QApplication(sys.argv)
     interface = Interface()
-    interface.show()
-    sys.exit(app.exec_())
+    if interface:
+        interface.show()
+        sys.exit(app.exec_())
