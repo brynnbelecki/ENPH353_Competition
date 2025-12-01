@@ -42,6 +42,7 @@ class ReadSign():
 
         rospy.spin()
 
+    #
     # def test(self, msg):
     #     print("test")
     #     print(msg)
@@ -54,34 +55,27 @@ class ReadSign():
         except CvBridgeError as e:
             rospy.logerr(e)
 
-        #look for signs every 50 frames
-        if self.imNum % 10 == 0:
-            #print frames to Pictures folder (used to train YOLO)
-            #if self.imNum % 30 == 0:
-                #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run3/drive{self.imNum}.png', self.frame)
-         
+        #look for signs every 10 frames
+        if self.imNum % 10 == 0:         
                 self.YOLO(cvImage)  
-        #self.imNum += 1
-                print(self.clueboard_message)
-
+        self.imNum += 1
+                
     ## runs sign YOLO model on image to extract sign and then on sign to extract individual letters
     #
     #< @param cvImage the input image
     def YOLO(self, cvImage):
         # Trained YOLO models
         modelSign = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/FindSign.pt")
-        modelLetters = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/20251125_2.pt")
+        modelLetters = YOLO("/home/fizzer/ros_ws/src/drone/YOLO/YOLO_Chars_20251130.pt")
 
         # Only include if model > 80% confident    
         results = modelSign(source=cvImage, conf = 0.80, show=False)
-        #print(len(results))  
 
         # Get the annotated image as a NumPy array (BGR format)
         if len(results) == 1:
             # Access the first result
             first_result = results[0]
             annotated_image_np = first_result.plot()
-            #self.frame = annotated_image_np
 
             box = first_result.boxes.xyxy
             if box is None or len(box) == 0:
@@ -89,7 +83,6 @@ class ReadSign():
 
             else: 
                 #crop sign from image
-                #print(f"box: {box}")
                 x1, y1, x2, y2 = map(int, box[0])
                 cropped_image_np = cvImage[y1:y2, x1:x2]
 
@@ -104,25 +97,26 @@ class ReadSign():
     #< @param model the YOLO model used to extract clueboard letters
     #< @param message the raw YOLO output from running the model
     def getClue(self, model, message):
-        #extract results and locations on sign image 
+        #extract model results and locations on sign image 
         topx = []
         topy = []
         chars = []
         
         boxes = message[0].boxes
-        xyxy = boxes.xyxy  # shape [num_boxes, 4]
-        class_ids = boxes.cls  # shape [num_boxes]
+        xyxy = boxes.xyxy
+        class_ids = boxes.cls
     
         for box, cls in zip(xyxy, class_ids):
             region = box.tolist()       # [x1, y1, x2, y2]
             topx.append(region[0])
             topy.append(region[1])
-            class_id = int(cls)         # integer class ID
+            class_id = int(cls)         # integer class ID (match to YOLO classes)
             class_name = model.names[class_id]
             chars.append(str(class_name))
         print(chars)
 
         #categorize by vertical position on image
+        # based on model certainty, so one of row1 and row2 will be the topic and the other will be the clue
         y1 = topy[0]
         row1 = [topx[0]]
         row1chars = [chars[0]]
@@ -141,6 +135,7 @@ class ReadSign():
         row1chars = np.array(row1chars)
         row2chars = np.array(row2chars)
 
+        # order topic / clue by location on sign
         label_index = np.argsort(row1)
         clue_index = np.argsort(row2)
         print(row1[label_index])
@@ -148,9 +143,13 @@ class ReadSign():
         print(row2[clue_index])
         print(row2chars[clue_index])
 
+        # check that topic matches available topics and match clue
         self.matchClue(''.join(row1chars[label_index]), ''.join(row2chars[clue_index]))
 
-    ## matches clue to topic 
+    ## matches clue to topic
+    #
+    #< @param topic string, either the clue or the topic
+    #< @param clue string, either the clue or the topic
     def matchClue(self, topic, clue):
         for key in list(self.clueboard_message.keys()):
             if topic == key:
