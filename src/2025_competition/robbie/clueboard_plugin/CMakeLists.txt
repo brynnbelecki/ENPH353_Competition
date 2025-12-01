@@ -1,16 +1,5 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 2.8.3)
 project(robbie)
-
-## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
-
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-find_package(catkin REQUIRED)
-
-## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
 
 ## Find catkin and any ROS packages you need
 find_package(catkin REQUIRED COMPONENTS
@@ -25,7 +14,7 @@ find_package(gazebo REQUIRED)
 ## catkin specific configuration ##
 ###################################
 catkin_package(
-  LIBRARIES ClueboardHandler
+  LIBRARIES SimpleForceDronePlugin
   CATKIN_DEPENDS roscpp geometry_msgs
 )
 
@@ -40,17 +29,17 @@ include_directories(
 )
 
 # Build the plugin as a shared library
-add_library(ClueboardHandler
-  src/ClueboardHandler.cpp
+add_library(SimpleForceDronePlugin
+  src/drone_plugin/SimpleForceDronePlugin.cpp
 )
 
 # Link against ROS and Gazebo
-target_link_libraries(ClueboardHandler
+target_link_libraries(SimpleForceDronePlugin
   ${catkin_LIBRARIES}
   ${GAZEBO_LIBRARIES}
 )
 
 # Make sure the plugin is installed so Gazebo can find it
-install(TARGETS ClueboardHandler
+install(TARGETS SimpleForceDronePlugin
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )

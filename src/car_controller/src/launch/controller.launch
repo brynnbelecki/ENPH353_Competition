@@ -1,11 +1,16 @@
 <launch>
-	<node pkg="car_controller"
+	<!-- <node pkg="car_controller"
          type="interface_test.py"
          name="controller" 
-         output="screen"/>
+         output="screen"/> -->
 
 	<node pkg="car_controller"
          type="drive.py"
          name="driver" 
+         output="screen"/> 
+
+    <node pkg="car_controller"
+         type="sign_read.py"
+         name="reader" 
          output="screen"/>
 </launch>

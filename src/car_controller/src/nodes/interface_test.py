@@ -30,9 +30,9 @@ debug = True #print statements
 interface = True #show interface
 
 class Interface(QtWidgets.QMainWindow):
-    def __init__(self,):
+    def __init__(self):
+        super(Interface, self).__init__()
         if interface:
-            super(Interface, self).__init__()
             # Load interface
             uic.loadUi("/home/fizzer/ros_ws/src/car_controller/src/nodes/353Competition.ui", self)
 
@@ -88,13 +88,14 @@ class Interface(QtWidgets.QMainWindow):
         #look for signs every 50 frames
         if self.imNum % 10 == 0:
             #print frames to Pictures folder (used to train YOLO)
-            if self.imNum % 30 == 0:
-                cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run3/drive{self.imNum}.png', self.frame)
+            #if self.imNum % 30 == 0:
+                #cv.imwrite(f'/home/fizzer/ros_ws/src/car_controller/neural/Run3/drive{self.imNum}.png', self.frame)
             
             if debugLineFollow:
                 self.frame = self.lineFollow(cvImage)
             else:  
                 self.YOLO(cvImage)  
+                print("here")
         
         self.imNum += 1
 

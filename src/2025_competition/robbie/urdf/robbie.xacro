@@ -293,4 +293,10 @@
     </sensor>
   </gazebo>
 
+  <gazebo>
+    <plugin name="clueboard_handler" filename="libClueboardHandler.so">
+      <namespace>R1</namespace>
+    </plugin>
+  </gazebo>
+
 </robot>
