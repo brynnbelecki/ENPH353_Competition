@@ -36,17 +36,9 @@ class ReadSign():
 
         # Publishers / Subscribers
         self.sub_camera = rospy.Subscriber(cameraPath, Image, self.process) 
-        # self.pub_message = rospy.Publisher("/clueboard_message_in", String, queue_size=10)
-        # self.sub_message = rospy.Subscriber("/clueboard_message", String, self.test)
-        # self.sub_status = rospy.Subscriber("/clueboard_status", String, self.test) 
 
         rospy.spin()
 
-    #
-    # def test(self, msg):
-    #     print("test")
-    #     print(msg)
-        
     ## Processes input images
     def process(self, image):
         cvBridge = CvBridge()
@@ -66,7 +58,7 @@ class ReadSign():
     def YOLO(self, cvImage):
         # Trained YOLO models
         modelSign = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/FindSign.pt")
-        modelLetters = YOLO("/home/fizzer/ros_ws/src/drone/YOLO/YOLO_Chars_20251130.pt")
+        modelLetters = YOLO("/home/fizzer/ENPH353_Competition/src/drone/YOLO/20251201.pt")
 
         # Only include if model > 80% confident    
         results = modelSign(source=cvImage, conf = 0.80, show=False)
@@ -152,12 +144,12 @@ class ReadSign():
     #< @param clue string, either the clue or the topic
     def matchClue(self, topic, clue):
         for key in list(self.clueboard_message.keys()):
-            if topic == key:
+            if topic == key and self.clueboard_count[key] <= 5:
                 if clue == self.clueboard_message[key]:
                     self.clueboard_count[key] += 1
                 self.clueboard_message[key] = clue
             else:
-                if clue == key:
+                if clue == key and self.clueboard_count[key] <= 5:
                     if topic == self.clueboard_message[key]:
                         self.clueboard_count[key] += 1
                     self.clueboard_message[key] = topic
@@ -167,7 +159,7 @@ class ReadSign():
     #< @param topic the clueboard topic
     #< @return true if the model has read the same message 5 times, false otherwise
     def clueboard_status(self, topic):
-        if self.clueboard_count(topic) > 5: 
+        if self.clueboard_count(topic) == 5: 
             return True
         else:
             return False 
