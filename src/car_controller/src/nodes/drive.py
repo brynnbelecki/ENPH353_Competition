@@ -33,6 +33,8 @@ class Car:
     def __init__(self):
         rospy.init_node('topicPublisher')
 
+        time.sleep(5)
+
         # initial position from robot.launch file
         # -x 5.5 -y 2.5 -z 0.2 -R 0.0 -P 0.0 -Y -1.57 
         self.respawn(POSITION1)

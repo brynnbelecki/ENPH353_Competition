@@ -4,10 +4,10 @@
          name="controller" 
          output="screen"/> -->
 
-	<node pkg="car_controller"
+	<!-- <node pkg="car_controller"
          type="drive.py"
          name="driver" 
-         output="screen"/> 
+         output="screen"/>  -->
 
     <node pkg="car_controller"
          type="sign_read.py"
