@@ -120,7 +120,7 @@ class DroneTargetTrigger:
     #< @param cvImage the input image
     def YOLO(self, cvImage):
         # Trained YOLO models
-        modelSign = YOLO("/home/fizzer/ros_ws/src/car_controller/neural/YOLO/FindSign.pt")
+        modelSign = YOLO("/home/fizzer/ENPH353_Competition/src/drone/YOLO/FindSign.pt")
         modelLetters = YOLO("/home/fizzer/ENPH353_Competition/src/drone/YOLO/20251201.pt")
 
         # Only include if model > 80% confident    
