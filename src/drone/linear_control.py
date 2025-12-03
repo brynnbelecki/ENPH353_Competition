@@ -25,11 +25,11 @@ class DronePIDController:
         self.Ki_z = 25
         self.Kd_z = 200.0
 
-        N = 7
+        N = 15
 
         self.Kp_xy = 12 * N
-        self.Ki_xy = 10 * N
-        self.Kd_xy = 4.5 * N
+        self.Ki_xy = 15 * N
+        self.Kd_xy = 1.5 * N
         self.y_scale = 1.05
 
         # PID memory
@@ -39,6 +39,12 @@ class DronePIDController:
         self.integral_x = 0.0
         self.prev_error_y = 0.0
         self.integral_y = 0.0
+
+        # Derivative smoothing buffers
+        self.deriv_hist_x = []
+        self.deriv_hist_y = []
+        self.deriv_hist_z = []
+        self.deriv_window = 5  # average last 5 derivative terms
 
         # Target height
         self.target_height = 30.0
@@ -92,7 +98,7 @@ class DronePIDController:
 
         # -------- Initial downward thrust for first 1.5s --------
         if not self.active:
-            cmd.linear.z = -20000.0
+            cmd.linear.z = -2000.0
             self.pub_cmd.publish(cmd)
             return
 
@@ -137,7 +143,7 @@ class DronePIDController:
 
         # Errors
         error_x = cx_img - cx_obj
-        error_y = (cy_obj - cy_img)* self.y_scale
+        error_y = (cy_obj - cy_img) * self.y_scale
         error_z = self.target_height - height_estimate
 
         if abs(error_x) < 0.25:
@@ -145,19 +151,38 @@ class DronePIDController:
         if abs(error_y) < 0.25:
             error_y = 0
 
-        # PID X
+        # --------------------------------------------------------
+        # PID X with averaged derivative
+        # --------------------------------------------------------
         self.integral_x += error_x * dt
-        derivative_x = (error_x - self.prev_error_x) / dt
+        raw_dx = (error_x - self.prev_error_x) / dt
+        self.deriv_hist_x.append(raw_dx)
+        if len(self.deriv_hist_x) > self.deriv_window:
+            self.deriv_hist_x.pop(0)
+        derivative_x = np.mean(self.deriv_hist_x)
         vx_cmd = self.Kp_xy * error_x + self.Ki_xy * self.integral_x + self.Kd_xy * derivative_x
 
-        # PID Y
+        # --------------------------------------------------------
+        # PID Y with averaged derivative
+        # --------------------------------------------------------
         self.integral_y += error_y * dt
-        derivative_y = (error_y - self.prev_error_y) / dt
+        raw_dy = (error_y - self.prev_error_y) / dt
+        self.deriv_hist_y.append(raw_dy)
+        if len(self.deriv_hist_y) > self.deriv_window:
+            self.deriv_hist_y.pop(0)
+        derivative_y = np.mean(self.deriv_hist_y)
         vy_cmd = self.Kp_xy * error_y + self.Ki_xy * self.integral_y + self.Kd_xy * derivative_y
 
-        # PID Z
+        # --------------------------------------------------------
+        # PID Z with averaged derivative
+        # --------------------------------------------------------
         self.integral_z += error_z * dt
-        derivative_z = (error_z - self.prev_error_z) / dt
+        raw_dz = (error_z - self.prev_error_z) / dt
+        self.deriv_hist_z.append(raw_dz)
+        if len(self.deriv_hist_z) > self.deriv_window:
+            self.deriv_hist_z.pop(0)
+        derivative_z = np.mean(self.deriv_hist_z)
+
         vz_cmd = self.hover_baseline + (
             self.Kp_z * error_z +
             self.Ki_z * self.integral_z +
@@ -167,7 +192,7 @@ class DronePIDController:
 
         # Publish
         cmd.linear.x = vx_cmd
-        cmd.linear.y = vy_cmd 
+        cmd.linear.y = vy_cmd
         cmd.linear.z = vz_cmd
 
         self.pub_cmd.publish(cmd)

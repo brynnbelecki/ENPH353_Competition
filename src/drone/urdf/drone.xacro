@@ -195,7 +195,7 @@
       <plugin name="gazebo_ros_depth_camera" filename="libgazebo_ros_depth_camera.so">
         <camera_name>D1/depth_camera</camera_name>
         <frame_name>depth_camera_link</frame_name>
-        <update_rate>120</update_rate>
+        <update_rate>250</update_rate>
         <robotNamespace>/D1</robotNamespace>
       </plugin>
     </sensor>

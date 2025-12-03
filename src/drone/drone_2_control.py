@@ -24,7 +24,6 @@ class DronePIDController:
 
         self.bridge = CvBridge()
 
-        # PID gains
         self.Kp_z = 200.0
         self.Ki_z = 25
         self.Kd_z = 200.0
@@ -33,7 +32,6 @@ class DronePIDController:
         self.Kd_xy = 4500
         self.y_scale = 0.475
 
-        # PID state
         self.prev_error_z = 0.0
         self.prev_error_x = 0.0
         self.prev_error_y = 0.0
@@ -45,40 +43,33 @@ class DronePIDController:
         self.min_thrust = -150000
         self.max_thrust = 150000
 
-        # Target
-        self.target_x = 0.1
-        self.target_y = 0.9
-        self.target_z = 1
+        self.target_x = 0.05
+        self.target_y = 0.825
+        self.target_z = 0
         self.new_target = True
 
-        # Current coordinates
         self.curr_x = 0.1
         self.curr_y = 0.9
         self.curr_z = 0.0
 
-        # Derivative smoothing
         self.deriv_window = 10
         self.dx_history = []
         self.dy_history = []
 
-        # Clock
         self.current_time = None
         self.start_time = None
         self.start_delay = 3
 
-        # Start PID loop thread
         self._pid_thread = threading.Thread(target=self.pid_loop)
         self._pid_thread.daemon = True
         self._pid_thread.start()
 
-    # ---------------- Clock ----------------
     def clock_callback(self, msg: Clock):
         self.current_time = msg.clock.to_sec()
         if self.start_time is None:
             self.start_time = self.current_time
             rospy.loginfo("[PID CTRL] Activated. Applying initial downward thrust!")
 
-    # ---------------- Target ----------------
     def target_callback(self, msg: Float32MultiArray):
         if len(msg.data) < 3:
             return
@@ -87,14 +78,12 @@ class DronePIDController:
         self.target_z = msg.data[2]
         self.new_target = True
 
-    # ---------------- Coordinates ----------------
     def coords_callback(self, msg: Float32MultiArray):
         if len(msg.data) < 4 or (msg.data[0] == -1 and msg.data[1] == -1):
             return
         self.curr_x = (msg.data[0] + msg.data[2]) / 2
         self.curr_y = (msg.data[1] + msg.data[3]) / 2
 
-    # ---------------- Depth ----------------
     def depth_callback(self, msg: Image):
         if self.current_time is None:
             return
@@ -109,7 +98,6 @@ class DronePIDController:
             return
         self.curr_z = float(np.max(depth_image[mask]))
 
-    # ---------------- Derivative smoothing helper ----------------
     def smooth_derivative(self, history, new_val):
         history.append(new_val)
         if len(history) > self.deriv_window:
@@ -146,19 +134,16 @@ class DronePIDController:
     def publish_pid(self, dt):
         cmd = Twist()
 
-        # --- Errors ---
         error_x = -(self.target_x - self.curr_x)
         error_x = np.sign(error_x) * abs(error_x)
         error_y = (self.target_y - self.curr_y)
         error_y = np.sign(error_y) * abs(error_y) * self.y_scale
         error_z = self.target_z - self.curr_z
 
-        # --- Integrals ---
         self.integral_x += error_x * dt
         self.integral_y += error_y * dt
         self.integral_z += error_z * dt
 
-        # --- Derivatives ---
         raw_dx = (error_x - self.prev_error_x) / dt
         raw_dy = (error_y - self.prev_error_y) / dt
         derivative_x = self.smooth_derivative(self.dx_history, raw_dx)
@@ -171,7 +156,6 @@ class DronePIDController:
 
         derivative_z = (error_z - self.prev_error_z) / dt
 
-        # --- PID outputs ---
         vx_cmd = self.Kp_xy * error_x + self.Ki_xy * self.integral_x + self.Kd_xy * derivative_x
         vy_cmd = self.Kp_xy * error_y + self.Ki_xy * self.integral_y + self.Kd_xy * derivative_y
         vz_cmd = self.hover_baseline + (

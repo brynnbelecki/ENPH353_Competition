@@ -9,67 +9,81 @@ class DroneTargetTrigger:
         self.pub = rospy.Publisher("/drone_target", Float32MultiArray, queue_size=10)
         rospy.Subscriber("/drone_coords", Float32MultiArray, self.coords_callback)
 
-        # List of target coordinates [x, y, z, yaw]
         self.targets = [
-            [0.04, 0.875, 1, 2.25],           
-            [0.07, 0.29, 1, -3.1415/2],
-            [0.145, 0.2, 1, 3.1415],
-            [0.45, 0.325, 1, 0.9],
-            [0.425, 0.8, 1, -3.1415/2],
-            [0.775, 0.8, 1, 3.1415]
+            [0.008, 0.835, 0.5, -1/2],   # sign 1          
+            [0.064, 0.29, 0.5, -1/2],    # sign 2
+            [0.145, 0.2, 0.5, 1],        # sign 3  
+            [0.43, 0.37, 0.5, 1/2],      # sign 4
+            [0.43, 0.82, 0.5, -1/2],     # sign 5  
+            [0.76, 0.82, 0.5, 1],        # sign 6  
+            [0.835, 0.12, 0.5, 0],       # sign 7  
+            [0.85, 0.12, 2.5, 0],      # waypoint (special: no Z=0 drop, just wait)
+            [0.63, 0.27, 2.5, 0], # waypoint (special: no Z=0 drop, just wait)
+            [0.63, 0.27, 1, 0]          # final sign
         ]
 
-        # Error threshold for x/y to trigger z change
-        self.xy_threshold = 0.01  # meters
-        self.threshold_count_required = 5  # number of consecutive cycles
+        self.xy_threshold = 0.0075  
+        self.threshold_count_required = 5
 
-        # Current drone position
         self.curr_x = 0.0
         self.curr_y = 0.0
+        self.curr_z = 0.0
 
-        # Start main loop
-        self.rate = rospy.Rate(50)  # 10 Hz
+        self.rate = rospy.Rate(50)
         self.main_loop()
 
     def coords_callback(self, msg: Float32MultiArray):
         if len(msg.data) < 4:
             return
-        # Average corners to get center
+
         self.curr_x = (msg.data[0] + msg.data[2]) / 2
         self.curr_y = (msg.data[1] + msg.data[3]) / 2
 
+        if len(msg.data) >= 5:
+            self.curr_z = msg.data[4]
+
     def main_loop(self):
         while not rospy.is_shutdown():
+
             for target in self.targets:
-                tx, ty, tz_target, yaw = target
+                tx, ty, tz, yaw = target
 
-                # --- Step 1: Go to (x, y) at z=1 ---
-                self.publish_target(tx, ty, 1.0, yaw)
-                rospy.loginfo(f"Heading to target XY: [{tx:.3f}, {ty:.3f}] at Z=1")
+                is_waypoint = (tz > 1.5)
 
-                # Wait until drone reaches XY threshold for N consecutive calls
+                self.publish_target(tx, ty, tz, yaw)
+                rospy.loginfo(f"Heading to target XY: [{tx:.3f}, {ty:.3f}] Z={tz}")
+
                 consecutive_count = 0
+
+                if is_waypoint:
+                    rospy.sleep(0.25)
+                    continue  
+
                 while not rospy.is_shutdown():
-                    error = np.sqrt((tx - self.curr_x) ** 2 + (ty - self.curr_y) ** 2)
-                    if error < self.xy_threshold:
+
+                    xy_error = np.sqrt((tx - self.curr_x)**2 + (ty - self.curr_y)**2)
+
+                    if xy_error < self.xy_threshold:
                         consecutive_count += 1
                         if consecutive_count >= self.threshold_count_required:
                             break
                     else:
-                        consecutive_count = 0  # reset if outside threshold
-                    self.publish_target(tx, ty, 1.0, yaw)
+                        consecutive_count = 0
+
+                    self.publish_target(tx, ty, tz, yaw)
                     self.rate.sleep()
 
                 self.publish_target(tx, ty, 0.0, yaw)
+                # just need the sign reading call here, it should be looking right at the sign 
                 rospy.sleep(0.5)
 
-                self.publish_target(tx, ty, 1.0, yaw)
+                self.publish_target(tx, ty, tz, yaw)
                 rospy.sleep(0.25)
-
+            return
 
     def publish_target(self, x, y, z, yaw):
         msg = Float32MultiArray()
-        msg.data = [x, y, z, yaw]
+        msg.data = [x, y, z, yaw * np.pi]
         self.pub.publish(msg)
 
 
@@ -78,4 +92,3 @@ if __name__ == "__main__":
         DroneTargetTrigger()
     except rospy.ROSInterruptException:
         pass
-
