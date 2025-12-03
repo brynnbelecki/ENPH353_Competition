@@ -7,6 +7,7 @@ from rosgraph_msgs.msg import Clock
 from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
 import threading
+from std_msgs.msg import Bool
 
 class DronePIDController:
     def __init__(self, namespace="D2"):
@@ -58,7 +59,7 @@ class DronePIDController:
 
         self.current_time = None
         self.start_time = None
-        self.start_delay = 6
+        self.start_delay = 7
 
         self._pid_thread = threading.Thread(target=self.pid_loop)
         self._pid_thread.daemon = True
@@ -155,7 +156,6 @@ class DronePIDController:
             derivative_y = 0
             derivative_z = 0
             self.new_target = False
-        rospy.loginfo(f"{error_y}  {derivative_y}, {self.integral_y}")
 
         
 

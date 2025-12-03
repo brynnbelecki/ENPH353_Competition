@@ -13,22 +13,22 @@ class DroneTargetTrigger:
         self.pub = rospy.Publisher("/drone_target", Float32MultiArray, queue_size=10)
         rospy.Subscriber("/drone_coords", Float32MultiArray, self.coords_callback)
 
-        camera_path = "/B1/rrbot/camera2/image_raw"
+        camera_path = "/D2/rgb_camera/image_raw"
         rospy.Subscriber(camera_path, Image, self.process) 
 
         self.targets = [
-            [0.008, 0.84, 0.5, -1/2],   # sign 1          
+            [0.045, 0.863, 0, -0.8/2],   # sign 1          
             [0.064, 0.29, 0.5, -1/2],    # sign 2
             [0.145, 0.2, 0.5, 1],        # sign 3  
             [0.43, 0.37, 0.5, 1/2],      # sign 4
             [0.43, 0.82, 0.5, -1/2],     # sign 5  
             [0.76, 0.82, 0.5, 1],        # sign 6  
             [0.835, 0.12, 0.5, 0],       # sign 7  
-            [0.85, 0.12, 2.5, 0],      # waypoint (special: no Z=0 drop, just wait)
-            [0.63, 0.27, 2.5, 0], # waypoint (special: no Z=0 drop, just wait)
-            [0.63, 0.27, 1, 0],        # final sign
-            [0.75, 0.1, 2.5, 0], #slam into the tunnel
-            [0.75, 0.1, 0, 0]
+            [0.835, 0.12, 3, 0],      # waypoint (special: no Z=0 drop, just wait)
+            [0.63, 0.27, 3, 0], # waypoint (special: no Z=0 drop, just wait)
+            [0.63, 0.27, 0.5, 0]        # final sign
+            #[0.75, 0.1, 2.5, 0], #slam into the tunnel
+            #[0.75, 0.1, 0, 0]
         ]
 
         self.imNum = 0
@@ -36,8 +36,8 @@ class DroneTargetTrigger:
         self.clueboard_count = {"SIZE": 0, "VICTIM": 0, "CRIME": 0, "TIME": 0, "PLACE": 0, "MOTIVE": 0, "WEAPON": 0, "BANDIT": 0}
         self.clue_send_count = 0
 
-        self.xy_threshold = 0.0075  
-        self.threshold_count_required = 5
+        self.xy_threshold = 0.01  
+        self.threshold_count_required = 10
 
         self.curr_x = 0.0
         self.curr_y = 0.0
@@ -69,7 +69,7 @@ class DroneTargetTrigger:
                 consecutive_count = 0
 
                 if is_waypoint:
-                    rospy.sleep(0.5)
+                    rospy.sleep(1)
                     continue  
 
                 while not rospy.is_shutdown():
@@ -91,7 +91,7 @@ class DroneTargetTrigger:
                 print(f"target: {target}")
                 print(f"signs read: {self.clueboard_message}") 
                 print(f"count: {self.clueboard_count}") 
-                rospy.sleep(0.5)
+                rospy.sleep(1.5)
 
                 self.publish_target(tx, ty, tz, yaw)
                 rospy.sleep(0.5)

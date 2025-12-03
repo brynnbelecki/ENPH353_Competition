@@ -12,4 +12,7 @@
 
   <node name="linear" pkg="drone" type="linear_control.py"
         output="screen" respawn="false"/>
+      
+  <node name="reset_node" pkg="drone" type="reset.py"
+        output="screen" respawn="false"/>
 </launch>
