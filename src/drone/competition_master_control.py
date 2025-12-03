@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import rospy
 from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import String 
 import numpy as np
 
 from sensor_msgs.msg import Image
@@ -15,6 +16,11 @@ class DroneTargetTrigger:
 
         camera_path = "/D2/rgb_camera/image_raw"
         rospy.Subscriber(camera_path, Image, self.process) 
+        self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
+
+        # starts timer
+        for _ in range(10):
+            self.pubScore.publish(f"Team 7,password,0,NA")
 
         self.targets = [
             [0.045, 0.863, 0, -0.8/2],   # sign 1          
@@ -31,10 +37,10 @@ class DroneTargetTrigger:
             #[0.75, 0.1, 0, 0]
         ]
 
-        self.imNum = 0
         self.clueboard_message = {"SIZE": "", "VICTIM": "", "CRIME": "", "TIME": "", "PLACE": "", "MOTIVE": "", "WEAPON": "", "BANDIT": ""}
         self.clueboard_count = {"SIZE": 0, "VICTIM": 0, "CRIME": 0, "TIME": 0, "PLACE": 0, "MOTIVE": 0, "WEAPON": 0, "BANDIT": 0}
         self.clue_send_count = 0
+        self.clue_id = 1
 
         self.xy_threshold = 0.01  
         self.threshold_count_required = 10
@@ -56,7 +62,6 @@ class DroneTargetTrigger:
 
     def main_loop(self):
         while not rospy.is_shutdown():
-
 
             for target in self.targets:
                 tx, ty, tz, yaw = target
@@ -87,14 +92,28 @@ class DroneTargetTrigger:
                     self.rate.sleep()
 
                 self.publish_target(tx, ty, 0.0, yaw)
-                # just need the sign reading call here, it should be looking right at the sign
+
+                # publish sign once read -- should wait until this is successful before continuing
+                notSent = True
+                while notSent: #this is non-blocking (pretty sure bc subscriber should be its own thread)
+                    if self.targets[self.clue_send_count] == target and list(self.clueboard_count.values())[self.clue_send_count] == 5:
+                        self.pubScore.publish(f"Team 7,password,{self.clue_id},{list(self.clueboard_message.values())[self.clue_send_count]}")
+                        
+                        self.clue_id += 1
+                        self.clue_send_count += 1
+                        notSent = False
+
                 print(f"target: {target}")
                 print(f"signs read: {self.clueboard_message}") 
                 print(f"count: {self.clueboard_count}") 
-                rospy.sleep(1.5)
+
+                rospy.sleep(0.5)
 
                 self.publish_target(tx, ty, tz, yaw)
-                rospy.sleep(0.5)
+                rospy.sleep(0.25)
+
+            # stops timer -- should not reach here unless we have had a successful run in which case we don't need to reset and should stop
+            self.pubScore.publish(f"Team 7,password,-1,NA")
             return
 
     def publish_target(self, x, y, z, yaw):
@@ -110,10 +129,9 @@ class DroneTargetTrigger:
         except CvBridgeError as e:
             rospy.logerr(e)
 
-        #look for signs every 10 frames
-        if self.imNum % 10 == 0:         
-                self.YOLO(cvImage)  
-        self.imNum += 1
+        #look for signs every frame        
+        self.YOLO(cvImage)  
+        
                 
     ## runs sign YOLO model on image to extract sign and then on sign to extract individual letters
     #
