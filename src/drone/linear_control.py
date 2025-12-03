@@ -25,9 +25,11 @@ class DronePIDController:
         self.Ki_z = 25
         self.Kd_z = 200.0
 
-        self.Kp_xy = 15
-        self.Ki_xy = 25
-        self.Kd_xy = 25
+        N = 7
+
+        self.Kp_xy = 12 * N
+        self.Ki_xy = 10 * N
+        self.Kd_xy = 4.5 * N
         self.y_scale = 1.05
 
         # PID memory
@@ -50,42 +52,35 @@ class DronePIDController:
         self.start_time = None
         self.active = False
 
-        # Initial thrust
-        self.initial_thrust_duration = 0.25
-        self.initial_thrust_done = False
-        self.initial_thrust_value = 600.0
-        self.hover_baseline = 198.6
-        self.min_thrust = -300
-        self.max_thrust = 1000
-        self.reached_height = False
-
         # Centroid smoothing
         self.cx_prev = None
         self.cy_prev = None
         self.smooth_alpha = 0.1  
 
+        # Hover and thrust limits
+        self.hover_baseline = 198.6
+        self.min_thrust = -300
+        self.max_thrust = 1000
 
     # ------------------------------------------------------------
     # Time Sync
     # ------------------------------------------------------------
     def clock_callback(self, msg: Clock):
         self.current_time = msg.clock.to_sec()
-
         if self.start_time is None:
             self.start_time = self.current_time
             self.last_time = self.current_time
+            rospy.loginfo("[PID CTRL] Activated. Applying initial downward thrust!")
 
         if not self.active and (self.current_time - self.start_time > 1.5):
             self.active = True
-            self.thrust_start_time = self.current_time
-            rospy.loginfo("[PID CTRL] Activated. Initial upward thrust starting!")
-
+            rospy.loginfo("[PID CTRL] PID control active.")
 
     # ------------------------------------------------------------
     # Depth Callback
     # ------------------------------------------------------------
     def depth_callback(self, msg: Image):
-        if self.current_time is None or not self.active:
+        if self.current_time is None:
             return
 
         dt = self.current_time - self.last_time
@@ -95,14 +90,11 @@ class DronePIDController:
 
         cmd = Twist()
 
-        # -------- INITIAL THRUST --------
-        time_since_activation = self.current_time - self.thrust_start_time
-        if (not self.initial_thrust_done) and (time_since_activation <= self.initial_thrust_duration):
-            cmd.linear.z = self.initial_thrust_value
+        # -------- Initial downward thrust for first 1.5s --------
+        if not self.active:
+            cmd.linear.z = -20000.0
             self.pub_cmd.publish(cmd)
             return
-        else:
-            self.initial_thrust_done = True
 
         # -------- Convert depth image --------
         try:
@@ -113,29 +105,26 @@ class DronePIDController:
 
         mask = (cv_image > 0.005) & (cv_image < 40.0)
         if not np.any(mask):
-            rospy.logwarn("[DEPTH] No valid depth")
-            return
+            height_estimate = 0.0
+        else:
+            height_estimate = float(np.median(cv_image[mask]))
+            if np.isnan(height_estimate) or height_estimate <= 0 or height_estimate > 40:
+                height_estimate = 0.0
 
-        height_estimate = float(np.median(cv_image[mask]))
-        if np.isnan(height_estimate) or height_estimate <= 0 or height_estimate > 40:
-            rospy.logwarn("[DEPTH] Invalid depth estimate")
-            return
-
+        # Centroid calculation
         mask_uint8 = mask.astype(np.uint8)
-
         M = cv2.moments(mask_uint8)
         if M["m00"] == 0:
-            rospy.logwarn("[CENTROID] Zero moment")
-            return
-
-        cx_obj = M["m10"] / M["m00"]
-        cy_obj = M["m01"] / M["m00"]
+            cx_obj, cy_obj = (cv_image.shape[1]-1)/2.0, (cv_image.shape[0]-1)/2.0
+        else:
+            cx_obj = M["m10"] / M["m00"]
+            cy_obj = M["m01"] / M["m00"]
 
         # Image center
         cx_img = (cv_image.shape[1] - 1) / 2.0
         cy_img = (cv_image.shape[0] - 1) / 2.0
 
-        # -------- Centroid smoothing --------
+        # Centroid smoothing
         if self.cx_prev is None:
             self.cx_prev = cx_obj
             self.cy_prev = cy_obj
@@ -148,7 +137,7 @@ class DronePIDController:
 
         # Errors
         error_x = cx_img - cx_obj
-        error_y = cy_obj - cy_img
+        error_y = (cy_obj - cy_img)* self.y_scale
         error_z = self.target_height - height_estimate
 
         if abs(error_x) < 0.25:
@@ -161,16 +150,12 @@ class DronePIDController:
         derivative_x = (error_x - self.prev_error_x) / dt
         vx_cmd = self.Kp_xy * error_x + self.Ki_xy * self.integral_x + self.Kd_xy * derivative_x
 
-        # ---------------------------------------------------------
-        # PID Y 
-        # ---------------------------------------------------------
+        # PID Y
         self.integral_y += error_y * dt
         derivative_y = (error_y - self.prev_error_y) / dt
         vy_cmd = self.Kp_xy * error_y + self.Ki_xy * self.integral_y + self.Kd_xy * derivative_y
 
-        # ---------------------------------------------------------
         # PID Z
-        # ---------------------------------------------------------
         self.integral_z += error_z * dt
         derivative_z = (error_z - self.prev_error_z) / dt
         vz_cmd = self.hover_baseline + (
@@ -182,7 +167,7 @@ class DronePIDController:
 
         # Publish
         cmd.linear.x = vx_cmd
-        cmd.linear.y = vy_cmd * self.y_scale
+        cmd.linear.y = vy_cmd 
         cmd.linear.z = vz_cmd
 
         self.pub_cmd.publish(cmd)
@@ -190,7 +175,7 @@ class DronePIDController:
         # Store previous errors
         self.prev_error_x = error_x
         self.prev_error_y = error_y
-        self.prev_error_z = error_z\
+        self.prev_error_z = error_z
 
 
 if __name__ == "__main__":

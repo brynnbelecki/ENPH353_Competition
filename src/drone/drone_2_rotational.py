@@ -15,23 +15,22 @@ class YawPController:
         # Publisher for yaw angular velocity command
         self.pub_cmd = rospy.Publisher(f"/{self.ns}/drone_angular_cmd", Twist, queue_size=10)
 
-        # IMU -> get current yaw
+        # IMU subscriber to get current yaw
         self.sub_imu = rospy.Subscriber(f"/{self.ns}/imu/data", Imu, self.imu_callback)
 
         # Target yaw in radians
         self.sub_target = rospy.Subscriber("/drone_target", Float32MultiArray, self.target_callback)
 
-        self.Kp = 5.0   # proportional gain
-        self.yaw_setpoint = -np.pi/2
+        self.Kp = 8.0   # proportional gain
+        self.yaw_setpoint = -np.pi / 2
 
     def target_callback(self, msg: Float32MultiArray):
         self.yaw_setpoint = msg.data[3]
 
     def imu_callback(self, msg: Imu):
-        
         q = msg.orientation
         roll, pitch, yaw = tft.euler_from_quaternion([q.x, q.y, q.z, q.w])
-        
+
         # Normalize yaw to [-pi, pi]
         yaw = (yaw + math.pi) % (2 * math.pi) - math.pi
 
@@ -43,10 +42,7 @@ class YawPController:
 
         # P-control output
         cmd = Twist()
-
         cmd.angular.z = self.Kp * error
-
-
 
         self.pub_cmd.publish(cmd)
 

@@ -1,6 +1,22 @@
 <launch>
+<<<<<<< HEAD
 	<node pkg="car_controller"
          type="subscriber.py"
          name="controller" 
+=======
+	<!-- <node pkg="car_controller"
+         type="interface_test.py"
+         name="controller" 
+         output="screen"/> -->
+
+	<node pkg="car_controller"
+         type="drive.py"
+         name="driver" 
+         output="screen"/> 
+
+    <node pkg="car_controller"
+         type="sign_read.py"
+         name="reader" 
+>>>>>>> 9afa37ff6d349a802809f6cc3d95c5b6f702621a
          output="screen"/>
 </launch>

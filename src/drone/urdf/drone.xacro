@@ -33,7 +33,6 @@
         <box size="${chassis_collision_x} ${chassis_collision_y} ${chassis_collision_z_top + chassis_collision_z_bottom}"/>
       </geometry>
     </collision>
-
     <visual name="chassis_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -44,10 +43,10 @@
   </link>
 
   <!--============================================================================-->
-  <!--                         FRONT + BACK LINKS                                 -->
+  <!--                         FRONT + BACK LINKS (visual only)                   -->
   <!--============================================================================-->
   <link name="back_link">
-    <xacro:sphere_inertial name="back_link" m="0.5" r="0.05"/>
+    <xacro:sphere_inertial name="back_link" m="0.01" r="0.05"/> 
     <visual name="back_visual">
       <geometry>
         <mesh filename="file:///home/fizzer/ENPH353_Competition/src/drone/meshes/back.dae"/>
@@ -56,7 +55,7 @@
   </link>
 
   <link name="front_link">
-    <xacro:sphere_inertial name="front_link" m="0.5" r="0.05"/>
+    <xacro:sphere_inertial name="front_link" m="0.01" r="0.05"/> 
     <visual name="front_visual">
       <geometry>
         <mesh filename="file:///home/fizzer/ENPH353_Competition/src/drone/meshes/front.dae"/>
@@ -97,32 +96,29 @@
   </joint>
 
   <gazebo reference="camera_link">
-  <sensor type="camera" name="rgb_camera_sensor">
-    <always_on>true</always_on>
-    <update_rate>120</update_rate>
-
-    <camera>
-      <horizontal_fov>0.6</horizontal_fov>
-      <image>
-        <width>1500</width>
-        <height>650</height>
-        <format>R8G8B8</format>
-      </image>
-      <clip>
-        <near>0.05</near>
-        <far>50.0</far>
-      </clip>
-    </camera>
-
-    <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
-      <robotNamespace>/D1</robotNamespace>
-      <cameraName>rgb_camera</cameraName>
-      <frameName>rgb_camera_link</frameName>
-      <updateRate>165</updateRate>
-    </plugin>
-  </sensor>
-</gazebo>
-
+    <sensor type="camera" name="rgb_camera_sensor">
+      <always_on>true</always_on>
+      <update_rate>120</update_rate>
+      <camera>
+        <horizontal_fov>0.6</horizontal_fov>
+        <image>
+          <width>1500</width>
+          <height>650</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>50.0</far>
+        </clip>
+      </camera>
+      <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
+        <robotNamespace>/D1</robotNamespace>
+        <cameraName>rgb_camera</cameraName>
+        <frameName>rgb_camera_link</frameName>
+        <updateRate>165</updateRate>
+      </plugin>
+    </sensor>
+  </gazebo>
 
   <!--============================================================================-->
   <!--                                  IMU                                       -->
@@ -154,7 +150,7 @@
       </plugin>
     </sensor>
   </gazebo>
-    
+
   <!--=======================-->
   <!--  DEPTH CAMERA LINK    -->
   <!--=======================-->
@@ -164,7 +160,6 @@
       <origin xyz="0 0 0"/>
       <inertia ixx="1e-6" iyy="1e-6" izz="1e-6"/>
     </inertial>
-
     <visual name="depth_cam_visual">
       <geometry>
         <box size="0.03 0.03 0.03"/>
@@ -174,22 +169,17 @@
     </visual>
   </link>
 
-  <!-- Mount it under the chassis -->
   <joint name="depth_camera_mount" type="fixed">
     <parent link="chassis"/>
     <child link="depth_camera_link"/>
-    <!-- Point DOWNWARD: rpy = -90deg roll -->
+    <!-- Point downward -->
     <origin xyz="0 0 0" rpy="0 1.5708 0"/>
   </joint>
 
-  <!--=======================-->
-  <!--  SENSOR ON THE LINK   -->
-  <!--=======================-->
   <gazebo reference="depth_camera_link">
     <sensor type="depth" name="depth_camera_sensor">
       <always_on>true</always_on>
       <update_rate>150</update_rate>
-
       <camera>
         <horizontal_fov>1.1</horizontal_fov>
         <image>
@@ -202,14 +192,12 @@
           <far>40.0</far>
         </clip>
       </camera>
-
       <plugin name="gazebo_ros_depth_camera" filename="libgazebo_ros_depth_camera.so">
         <camera_name>D1/depth_camera</camera_name>
         <frame_name>depth_camera_link</frame_name>
         <update_rate>120</update_rate>
         <robotNamespace>/D1</robotNamespace>
       </plugin>
-
     </sensor>
   </gazebo>
 
@@ -220,6 +208,8 @@
     <plugin name="drone_control" filename="libSimpleBodyDroneControlPlugin.so">
       <namespace>D1</namespace>
     </plugin>
+    <enable_wind>true</enable_wind>
   </gazebo>
 
 </robot>
+

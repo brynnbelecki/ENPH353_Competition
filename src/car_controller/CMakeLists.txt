@@ -202,3 +202,17 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+find_package(gazebo REQUIRED)
+
+link_directories(${GAZEBO_LIBRARY_DIRS})
+include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
+
+add_library(ClueboardHandler /src/car_controller/src/nodes/ClueboardHandler.cpp)
+target_link_libraries(ClueboardHandler ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+catkin_package(
+  DEPENDS
+    roscpp
+    gazebo_ros
+)

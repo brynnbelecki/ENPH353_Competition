@@ -1,0 +1,1176 @@
+15:36:51.759: Clue SIZE: UNKNOWN
+15:36:51.759: Clue VICTIM: MAGIC MIKE
+15:36:51.759: Clue CRIME: DISAPPEAR
+15:36:51.839: Clue TIME: CIRCUS
+15:36:51.950: Clue PLACE: WORMHOLE
+15:36:52.087: Clue MOTIVE: STARDOM
+15:36:52.199: Clue WEAPON: QUANTUM WAND
+15:36:52.200: Clue BANDIT: CLOWN CLAUDE
+15:37:05.950: Message received: Team 7,password,0,NA
+15:37:05.951: Timer started.
+15:37:05.951: Message received: Team 7,password,-1,NA
+15:37:05.951: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.049: Message received: Team 7,password,0,NA
+15:37:06.051: Timer started.
+15:37:06.053: Message received: Team 7,password,-1,NA
+15:37:06.053: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.085: Message received: Team 7,password,0,NA
+15:37:06.085: Timer started.
+15:37:06.086: Message received: Team 7,password,-1,NA
+15:37:06.086: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.111: Message received: Team 7,password,0,NA
+15:37:06.112: Timer started.
+15:37:06.113: Message received: Team 7,password,-1,NA
+15:37:06.113: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.139: Message received: Team 7,password,0,NA
+15:37:06.140: Timer started.
+15:37:06.141: Message received: Team 7,password,-1,NA
+15:37:06.142: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.169: Message received: Team 7,password,0,NA
+15:37:06.169: Timer started.
+15:37:06.170: Message received: Team 7,password,-1,NA
+15:37:06.291: Timer stopped: 0.12 sec sim time (real time: 0sec).
+15:37:06.434: Message received: Team 7,password,0,NA
+15:37:06.503: Timer started.
+15:37:06.612: Message received: Team 7,password,-1,NA
+15:37:06.612: Timer stopped: 0.11 sec sim time (real time: 0sec).
+15:37:06.652: Message received: Team 7,password,0,NA
+15:37:06.652: Timer started.
+15:37:06.653: Message received: Team 7,password,-1,NA
+15:37:06.654: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.691: Message received: Team 7,password,0,NA
+15:37:06.692: Timer started.
+15:37:06.692: Message received: Team 7,password,-1,NA
+15:37:06.693: Timer stopped: 0.00 sec sim time (real time: 0sec).
+15:37:06.719: Message received: Team 7,password,-1,NA
+15:37:06.719: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.720: Message received: Team 7,password,-1,NA
+15:37:06.720: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.721: Message received: Team 7,password,-1,NA
+15:37:06.721: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.722: Message received: Team 7,password,-1,NA
+15:37:06.723: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.723: Message received: Team 7,password,-1,NA
+15:37:06.724: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.724: Message received: Team 7,password,-1,NA
+15:37:06.725: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.725: Message received: Team 7,password,-1,NA
+15:37:06.726: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.726: Message received: Team 7,password,-1,NA
+15:37:06.727: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.727: Message received: Team 7,password,-1,NA
+15:37:06.727: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.728: Message received: Team 7,password,-1,NA
+15:37:06.728: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.729: Message received: Team 7,password,-1,NA
+15:37:06.729: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.729: Message received: Team 7,password,-1,NA
+15:37:06.730: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.730: Message received: Team 7,password,-1,NA
+15:37:06.731: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.731: Message received: Team 7,password,-1,NA
+15:37:06.732: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.733: Message received: Team 7,password,-1,NA
+15:37:06.733: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:06.739: Message received: Team 7,password,-1,NA
+15:37:06.857: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.063: Message received: Team 7,password,-1,NA
+15:37:07.064: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.064: Message received: Team 7,password,-1,NA
+15:37:07.065: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.065: Message received: Team 7,password,-1,NA
+15:37:07.066: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.066: Message received: Team 7,password,-1,NA
+15:37:07.067: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.067: Message received: Team 7,password,-1,NA
+15:37:07.068: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.069: Message received: Team 7,password,-1,NA
+15:37:07.069: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.070: Message received: Team 7,password,-1,NA
+15:37:07.071: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.071: Message received: Team 7,password,-1,NA
+15:37:07.072: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.073: Message received: Team 7,password,-1,NA
+15:37:07.073: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.076: Message received: Team 7,password,-1,NA
+15:37:07.077: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.095: Message received: Team 7,password,-1,NA
+15:37:07.095: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.208: Message received: Team 7,password,-1,NA
+15:37:07.303: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.304: Message received: Team 7,password,-1,NA
+15:37:07.305: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.306: Message received: Team 7,password,-1,NA
+15:37:07.306: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.309: Message received: Team 7,password,-1,NA
+15:37:07.310: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.311: Message received: Team 7,password,-1,NA
+15:37:07.311: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.312: Message received: Team 7,password,-1,NA
+15:37:07.312: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.337: Message received: Team 7,password,-1,NA
+15:37:07.338: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.378: Message received: Team 7,password,-1,NA
+15:37:07.379: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.408: Message received: Team 7,password,-1,NA
+15:37:07.409: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.437: Message received: Team 7,password,-1,NA
+15:37:07.438: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.471: Message received: Team 7,password,-1,NA
+15:37:07.472: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.503: Message received: Team 7,password,-1,NA
+15:37:07.504: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.625: Message received: Team 7,password,-1,NA
+15:37:07.743: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.744: Message received: Team 7,password,-1,NA
+15:37:07.745: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.745: Message received: Team 7,password,-1,NA
+15:37:07.745: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.747: Message received: Team 7,password,-1,NA
+15:37:07.747: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.748: Message received: Team 7,password,-1,NA
+15:37:07.748: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.749: Message received: Team 7,password,-1,NA
+15:37:07.750: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.751: Message received: Team 7,password,-1,NA
+15:37:07.752: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.767: Message received: Team 7,password,-1,NA
+15:37:07.768: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.854: Message received: Team 7,password,-1,NA
+15:37:07.968: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.969: Message received: Team 7,password,-1,NA
+15:37:07.970: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.973: Message received: Team 7,password,-1,NA
+15:37:07.975: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.976: Message received: Team 7,password,-1,NA
+15:37:07.978: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.979: Message received: Team 7,password,-1,NA
+15:37:07.981: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:07.987: Message received: Team 7,password,-1,NA
+15:37:07.988: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.001: Message received: Team 7,password,-1,NA
+15:37:08.002: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.047: Message received: Team 7,password,-1,NA
+15:37:08.048: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.172: Message received: Team 7,password,-1,NA
+15:37:08.283: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.283: Message received: Team 7,password,-1,NA
+15:37:08.284: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.284: Message received: Team 7,password,-1,NA
+15:37:08.285: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.286: Message received: Team 7,password,-1,NA
+15:37:08.287: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.288: Message received: Team 7,password,-1,NA
+15:37:08.288: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.289: Message received: Team 7,password,-1,NA
+15:37:08.290: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.290: Message received: Team 7,password,-1,NA
+15:37:08.291: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.310: Message received: Team 7,password,-1,NA
+15:37:08.311: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.346: Message received: Team 7,password,-1,NA
+15:37:08.462: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.462: Message received: Team 7,password,-1,NA
+15:37:08.463: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.464: Message received: Team 7,password,-1,NA
+15:37:08.465: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.466: Message received: Team 7,password,-1,NA
+15:37:08.467: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.480: Message received: Team 7,password,-1,NA
+15:37:08.481: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.516: Message received: Team 7,password,-1,NA
+15:37:08.517: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.546: Message received: Team 7,password,-1,NA
+15:37:08.637: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.743: Message received: Team 7,password,-1,NA
+15:37:08.744: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.746: Message received: Team 7,password,-1,NA
+15:37:08.747: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.747: Message received: Team 7,password,-1,NA
+15:37:08.748: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.749: Message received: Team 7,password,-1,NA
+15:37:08.749: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.750: Message received: Team 7,password,-1,NA
+15:37:08.750: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.754: Message received: Team 7,password,-1,NA
+15:37:08.863: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.971: Message received: Team 7,password,-1,NA
+15:37:08.972: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.974: Message received: Team 7,password,-1,NA
+15:37:08.975: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.976: Message received: Team 7,password,-1,NA
+15:37:08.978: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.979: Message received: Team 7,password,-1,NA
+15:37:08.980: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.980: Message received: Team 7,password,-1,NA
+15:37:08.981: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:08.981: Message received: Team 7,password,-1,NA
+15:37:09.057: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.168: Message received: Team 7,password,-1,NA
+15:37:09.168: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.169: Message received: Team 7,password,-1,NA
+15:37:09.169: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.169: Message received: Team 7,password,-1,NA
+15:37:09.169: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.170: Message received: Team 7,password,-1,NA
+15:37:09.170: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.171: Message received: Team 7,password,-1,NA
+15:37:09.171: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.173: Message received: Team 7,password,-1,NA
+15:37:09.288: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.366: Message received: Team 7,password,-1,NA
+15:37:09.366: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.367: Message received: Team 7,password,-1,NA
+15:37:09.367: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.367: Message received: Team 7,password,-1,NA
+15:37:09.368: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.368: Message received: Team 7,password,-1,NA
+15:37:09.369: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.369: Message received: Team 7,password,-1,NA
+15:37:09.370: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.483: Message received: Team 7,password,-1,NA
+15:37:09.550: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.552: Message received: Team 7,password,-1,NA
+15:37:09.552: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.554: Message received: Team 7,password,-1,NA
+15:37:09.555: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.555: Message received: Team 7,password,-1,NA
+15:37:09.556: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.556: Message received: Team 7,password,-1,NA
+15:37:09.556: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.721: Message received: Team 7,password,-1,NA
+15:37:09.722: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.722: Message received: Team 7,password,-1,NA
+15:37:09.723: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.723: Message received: Team 7,password,-1,NA
+15:37:09.724: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.724: Message received: Team 7,password,-1,NA
+15:37:09.725: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.725: Message received: Team 7,password,-1,NA
+15:37:09.772: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.859: Message received: Team 7,password,-1,NA
+15:37:09.860: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.860: Message received: Team 7,password,-1,NA
+15:37:09.861: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.863: Message received: Team 7,password,-1,NA
+15:37:09.864: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.865: Message received: Team 7,password,-1,NA
+15:37:09.870: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:09.870: Message received: Team 7,password,-1,NA
+15:37:09.964: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.052: Message received: Team 7,password,-1,NA
+15:37:10.053: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.054: Message received: Team 7,password,-1,NA
+15:37:10.055: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.056: Message received: Team 7,password,-1,NA
+15:37:10.057: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.058: Message received: Team 7,password,-1,NA
+15:37:10.058: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.059: Message received: Team 7,password,-1,NA
+15:37:10.119: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.120: Message received: Team 7,password,-1,NA
+15:37:10.121: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.124: Message received: Team 7,password,-1,NA
+15:37:10.124: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.125: Message received: Team 7,password,-1,NA
+15:37:10.126: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.127: Message received: Team 7,password,-1,NA
+15:37:10.127: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.218: Message received: Team 7,password,-1,NA
+15:37:10.308: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.409: Message received: Team 7,password,-1,NA
+15:37:10.413: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.416: Message received: Team 7,password,-1,NA
+15:37:10.417: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.420: Message received: Team 7,password,-1,NA
+15:37:10.421: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.422: Message received: Team 7,password,-1,NA
+15:37:10.483: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.601: Message received: Team 7,password,-1,NA
+15:37:10.601: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.602: Message received: Team 7,password,-1,NA
+15:37:10.602: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.602: Message received: Team 7,password,-1,NA
+15:37:10.603: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.603: Message received: Team 7,password,-1,NA
+15:37:10.720: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.829: Message received: Team 7,password,-1,NA
+15:37:10.830: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.830: Message received: Team 7,password,-1,NA
+15:37:10.831: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.832: Message received: Team 7,password,-1,NA
+15:37:10.833: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:10.833: Message received: Team 7,password,-1,NA
+15:37:10.942: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.161: Message received: Team 7,password,-1,NA
+15:37:11.162: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.162: Message received: Team 7,password,-1,NA
+15:37:11.163: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.163: Message received: Team 7,password,-1,NA
+15:37:11.164: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.165: Message received: Team 7,password,-1,NA
+15:37:11.319: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.439: Message received: Team 7,password,-1,NA
+15:37:11.440: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.441: Message received: Team 7,password,-1,NA
+15:37:11.442: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.443: Message received: Team 7,password,-1,NA
+15:37:11.495: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.496: Message received: Team 7,password,-1,NA
+15:37:11.496: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.499: Message received: Team 7,password,-1,NA
+15:37:11.500: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.501: Message received: Team 7,password,-1,NA
+15:37:11.501: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.502: Message received: Team 7,password,-1,NA
+15:37:11.635: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.636: Message received: Team 7,password,-1,NA
+15:37:11.638: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.639: Message received: Team 7,password,-1,NA
+15:37:11.640: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.640: Message received: Team 7,password,-1,NA
+15:37:11.641: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.755: Message received: Team 7,password,-1,NA
+15:37:11.871: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.872: Message received: Team 7,password,-1,NA
+15:37:11.873: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.874: Message received: Team 7,password,-1,NA
+15:37:11.874: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.875: Message received: Team 7,password,-1,NA
+15:37:11.931: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.932: Message received: Team 7,password,-1,NA
+15:37:11.933: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.934: Message received: Team 7,password,-1,NA
+15:37:11.935: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:11.935: Message received: Team 7,password,-1,NA
+15:37:11.936: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.033: Message received: Team 7,password,-1,NA
+15:37:12.035: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.036: Message received: Team 7,password,-1,NA
+15:37:12.037: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.038: Message received: Team 7,password,-1,NA
+15:37:12.039: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.040: Message received: Team 7,password,-1,NA
+15:37:12.164: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.165: Message received: Team 7,password,-1,NA
+15:37:12.166: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.166: Message received: Team 7,password,-1,NA
+15:37:12.167: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.167: Message received: Team 7,password,-1,NA
+15:37:12.167: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.281: Message received: Team 7,password,-1,NA
+15:37:12.285: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.285: Message received: Team 7,password,-1,NA
+15:37:12.286: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.287: Message received: Team 7,password,-1,NA
+15:37:12.287: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.354: Message received: Team 7,password,-1,NA
+15:37:12.499: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.500: Message received: Team 7,password,-1,NA
+15:37:12.501: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.502: Message received: Team 7,password,-1,NA
+15:37:12.503: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.504: Message received: Team 7,password,-1,NA
+15:37:12.699: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.803: Message received: Team 7,password,-1,NA
+15:37:12.803: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.804: Message received: Team 7,password,-1,NA
+15:37:12.804: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.805: Message received: Team 7,password,-1,NA
+15:37:12.805: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.845: Message received: Team 7,password,-1,NA
+15:37:12.932: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.933: Message received: Team 7,password,-1,NA
+15:37:12.934: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.934: Message received: Team 7,password,-1,NA
+15:37:12.935: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:12.972: Message received: Team 7,password,-1,NA
+15:37:13.075: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.076: Message received: Team 7,password,-1,NA
+15:37:13.077: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.077: Message received: Team 7,password,-1,NA
+15:37:13.078: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.198: Message received: Team 7,password,-1,NA
+15:37:13.317: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.318: Message received: Team 7,password,-1,NA
+15:37:13.318: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.319: Message received: Team 7,password,-1,NA
+15:37:13.320: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.455: Message received: Team 7,password,-1,NA
+15:37:13.577: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.578: Message received: Team 7,password,-1,NA
+15:37:13.578: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.579: Message received: Team 7,password,-1,NA
+15:37:13.580: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.679: Message received: Team 7,password,-1,NA
+15:37:13.814: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.823: Message received: Team 7,password,-1,NA
+15:37:13.824: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.824: Message received: Team 7,password,-1,NA
+15:37:13.825: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:13.970: Message received: Team 7,password,-1,NA
+15:37:14.060: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.061: Message received: Team 7,password,-1,NA
+15:37:14.061: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.062: Message received: Team 7,password,-1,NA
+15:37:14.062: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.115: Message received: Team 7,password,-1,NA
+15:37:14.245: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.246: Message received: Team 7,password,-1,NA
+15:37:14.247: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.247: Message received: Team 7,password,-1,NA
+15:37:14.248: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.369: Message received: Team 7,password,-1,NA
+15:37:14.458: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.459: Message received: Team 7,password,-1,NA
+15:37:14.461: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.461: Message received: Team 7,password,-1,NA
+15:37:14.462: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.589: Message received: Team 7,password,-1,NA
+15:37:14.740: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.741: Message received: Team 7,password,-1,NA
+15:37:14.742: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.742: Message received: Team 7,password,-1,NA
+15:37:14.743: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.853: Message received: Team 7,password,-1,NA
+15:37:14.994: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.996: Message received: Team 7,password,-1,NA
+15:37:14.997: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:14.998: Message received: Team 7,password,-1,NA
+15:37:14.999: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.117: Message received: Team 7,password,-1,NA
+15:37:15.119: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.120: Message received: Team 7,password,-1,NA
+15:37:15.122: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.123: Message received: Team 7,password,-1,NA
+15:37:15.203: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.204: Message received: Team 7,password,-1,NA
+15:37:15.205: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.207: Message received: Team 7,password,-1,NA
+15:37:15.208: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.268: Message received: Team 7,password,-1,NA
+15:37:15.375: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.382: Message received: Team 7,password,-1,NA
+15:37:15.493: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.494: Message received: Team 7,password,-1,NA
+15:37:15.495: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.496: Message received: Team 7,password,-1,NA
+15:37:15.496: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.588: Message received: Team 7,password,-1,NA
+15:37:15.589: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.589: Message received: Team 7,password,-1,NA
+15:37:15.590: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.590: Message received: Team 7,password,-1,NA
+15:37:15.708: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.808: Message received: Team 7,password,-1,NA
+15:37:15.809: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.810: Message received: Team 7,password,-1,NA
+15:37:15.811: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.812: Message received: Team 7,password,-1,NA
+15:37:15.934: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.936: Message received: Team 7,password,-1,NA
+15:37:15.937: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.938: Message received: Team 7,password,-1,NA
+15:37:15.940: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.994: Message received: Team 7,password,-1,NA
+15:37:15.995: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.996: Message received: Team 7,password,-1,NA
+15:37:15.997: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:15.997: Message received: Team 7,password,-1,NA
+15:37:16.118: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.235: Message received: Team 7,password,-1,NA
+15:37:16.236: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.237: Message received: Team 7,password,-1,NA
+15:37:16.237: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.238: Message received: Team 7,password,-1,NA
+15:37:16.332: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.333: Message received: Team 7,password,-1,NA
+15:37:16.334: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.334: Message received: Team 7,password,-1,NA
+15:37:16.461: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.577: Message received: Team 7,password,-1,NA
+15:37:16.578: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.578: Message received: Team 7,password,-1,NA
+15:37:16.579: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.704: Message received: Team 7,password,-1,NA
+15:37:16.706: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.708: Message received: Team 7,password,-1,NA
+15:37:16.709: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:16.711: Message received: Team 7,password,-1,NA
+15:37:17.080: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.099: Message received: Team 7,password,-1,NA
+15:37:17.100: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.100: Message received: Team 7,password,-1,NA
+15:37:17.101: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.240: Message received: Team 7,password,-1,NA
+15:37:17.241: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.241: Message received: Team 7,password,-1,NA
+15:37:17.242: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.243: Message received: Team 7,password,-1,NA
+15:37:17.357: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.359: Message received: Team 7,password,-1,NA
+15:37:17.360: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.360: Message received: Team 7,password,-1,NA
+15:37:17.475: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.583: Message received: Team 7,password,-1,NA
+15:37:17.584: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.585: Message received: Team 7,password,-1,NA
+15:37:17.586: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.699: Message received: Team 7,password,-1,NA
+15:37:17.700: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.701: Message received: Team 7,password,-1,NA
+15:37:17.702: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.703: Message received: Team 7,password,-1,NA
+15:37:17.792: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.793: Message received: Team 7,password,-1,NA
+15:37:17.794: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.794: Message received: Team 7,password,-1,NA
+15:37:17.795: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.909: Message received: Team 7,password,-1,NA
+15:37:17.910: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.911: Message received: Team 7,password,-1,NA
+15:37:17.911: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:17.912: Message received: Team 7,password,-1,NA
+15:37:18.067: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.069: Message received: Team 7,password,-1,NA
+15:37:18.070: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.071: Message received: Team 7,password,-1,NA
+15:37:18.178: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.300: Message received: Team 7,password,-1,NA
+15:37:18.301: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.302: Message received: Team 7,password,-1,NA
+15:37:18.304: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.427: Message received: Team 7,password,-1,NA
+15:37:18.428: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.429: Message received: Team 7,password,-1,NA
+15:37:18.430: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.540: Message received: Team 7,password,-1,NA
+15:37:18.540: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.541: Message received: Team 7,password,-1,NA
+15:37:18.541: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.659: Message received: Team 7,password,-1,NA
+15:37:18.769: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.771: Message received: Team 7,password,-1,NA
+15:37:18.772: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.773: Message received: Team 7,password,-1,NA
+15:37:18.848: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.850: Message received: Team 7,password,-1,NA
+15:37:18.851: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.852: Message received: Team 7,password,-1,NA
+15:37:18.966: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.967: Message received: Team 7,password,-1,NA
+15:37:18.968: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:18.968: Message received: Team 7,password,-1,NA
+15:37:19.077: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.150: Message received: Team 7,password,-1,NA
+15:37:19.151: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.153: Message received: Team 7,password,-1,NA
+15:37:19.154: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.260: Message received: Team 7,password,-1,NA
+15:37:19.261: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.262: Message received: Team 7,password,-1,NA
+15:37:19.263: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.375: Message received: Team 7,password,-1,NA
+15:37:19.377: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.378: Message received: Team 7,password,-1,NA
+15:37:19.380: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.381: Message received: Team 7,password,-1,NA
+15:37:19.483: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.484: Message received: Team 7,password,-1,NA
+15:37:19.485: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.486: Message received: Team 7,password,-1,NA
+15:37:19.508: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.509: Message received: Team 7,password,-1,NA
+15:37:19.511: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.511: Message received: Team 7,password,-1,NA
+15:37:19.618: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.723: Message received: Team 7,password,-1,NA
+15:37:19.724: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.725: Message received: Team 7,password,-1,NA
+15:37:19.726: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.799: Message received: Team 7,password,-1,NA
+15:37:19.800: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.801: Message received: Team 7,password,-1,NA
+15:37:19.801: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.907: Message received: Team 7,password,-1,NA
+15:37:19.908: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:19.909: Message received: Team 7,password,-1,NA
+15:37:19.909: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.015: Message received: Team 7,password,-1,NA
+15:37:20.016: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.017: Message received: Team 7,password,-1,NA
+15:37:20.018: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.091: Message received: Team 7,password,-1,NA
+15:37:20.092: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.093: Message received: Team 7,password,-1,NA
+15:37:20.094: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.202: Message received: Team 7,password,-1,NA
+15:37:20.203: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.203: Message received: Team 7,password,-1,NA
+15:37:20.204: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.309: Message received: Team 7,password,-1,NA
+15:37:20.310: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.311: Message received: Team 7,password,-1,NA
+15:37:20.311: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.399: Message received: Team 7,password,-1,NA
+15:37:20.404: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.411: Message received: Team 7,password,-1,NA
+15:37:20.519: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.520: Message received: Team 7,password,-1,NA
+15:37:20.520: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.521: Message received: Team 7,password,-1,NA
+15:37:20.636: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.637: Message received: Team 7,password,-1,NA
+15:37:20.639: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.640: Message received: Team 7,password,-1,NA
+15:37:20.745: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.745: Message received: Team 7,password,-1,NA
+15:37:20.746: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.747: Message received: Team 7,password,-1,NA
+15:37:20.854: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.855: Message received: Team 7,password,-1,NA
+15:37:20.855: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.856: Message received: Team 7,password,-1,NA
+15:37:20.962: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.963: Message received: Team 7,password,-1,NA
+15:37:20.964: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:20.965: Message received: Team 7,password,-1,NA
+15:37:21.039: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.041: Message received: Team 7,password,-1,NA
+15:37:21.042: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.044: Message received: Team 7,password,-1,NA
+15:37:21.149: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.151: Message received: Team 7,password,-1,NA
+15:37:21.152: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.258: Message received: Team 7,password,-1,NA
+15:37:21.346: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.347: Message received: Team 7,password,-1,NA
+15:37:21.348: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.460: Message received: Team 7,password,-1,NA
+15:37:21.461: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.462: Message received: Team 7,password,-1,NA
+15:37:21.462: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.571: Message received: Team 7,password,-1,NA
+15:37:21.573: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.574: Message received: Team 7,password,-1,NA
+15:37:21.575: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.650: Message received: Team 7,password,-1,NA
+15:37:21.651: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.652: Message received: Team 7,password,-1,NA
+15:37:21.760: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.762: Message received: Team 7,password,-1,NA
+15:37:21.763: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.764: Message received: Team 7,password,-1,NA
+15:37:21.889: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.890: Message received: Team 7,password,-1,NA
+15:37:21.892: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.894: Message received: Team 7,password,-1,NA
+15:37:21.994: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:21.995: Message received: Team 7,password,-1,NA
+15:37:21.996: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.105: Message received: Team 7,password,-1,NA
+15:37:22.210: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.211: Message received: Team 7,password,-1,NA
+15:37:22.212: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.298: Message received: Team 7,password,-1,NA
+15:37:22.299: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.300: Message received: Team 7,password,-1,NA
+15:37:22.301: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.406: Message received: Team 7,password,-1,NA
+15:37:22.407: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.407: Message received: Team 7,password,-1,NA
+15:37:22.513: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.586: Message received: Team 7,password,-1,NA
+15:37:22.587: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.587: Message received: Team 7,password,-1,NA
+15:37:22.694: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.695: Message received: Team 7,password,-1,NA
+15:37:22.695: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.696: Message received: Team 7,password,-1,NA
+15:37:22.804: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.805: Message received: Team 7,password,-1,NA
+15:37:22.806: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.884: Message received: Team 7,password,-1,NA
+15:37:22.994: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:22.995: Message received: Team 7,password,-1,NA
+15:37:22.996: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.120: Message received: Team 7,password,-1,NA
+15:37:23.121: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.122: Message received: Team 7,password,-1,NA
+15:37:23.229: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.252: Message received: Team 7,password,-1,NA
+15:37:23.253: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.253: Message received: Team 7,password,-1,NA
+15:37:23.362: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.364: Message received: Team 7,password,-1,NA
+15:37:23.365: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.473: Message received: Team 7,password,-1,NA
+15:37:23.475: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.476: Message received: Team 7,password,-1,NA
+15:37:23.477: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.553: Message received: Team 7,password,-1,NA
+15:37:23.554: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.554: Message received: Team 7,password,-1,NA
+15:37:23.663: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.664: Message received: Team 7,password,-1,NA
+15:37:23.665: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.774: Message received: Team 7,password,-1,NA
+15:37:23.850: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.851: Message received: Team 7,password,-1,NA
+15:37:23.852: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.962: Message received: Team 7,password,-1,NA
+15:37:23.963: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:23.965: Message received: Team 7,password,-1,NA
+15:37:24.082: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.172: Message received: Team 7,password,-1,NA
+15:37:24.173: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.174: Message received: Team 7,password,-1,NA
+15:37:24.287: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.289: Message received: Team 7,password,-1,NA
+15:37:24.290: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.360: Message received: Team 7,password,-1,NA
+15:37:24.361: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.361: Message received: Team 7,password,-1,NA
+15:37:24.362: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.507: Message received: Team 7,password,-1,NA
+15:37:24.507: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.508: Message received: Team 7,password,-1,NA
+15:37:24.542: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.542: Message received: Team 7,password,-1,NA
+15:37:24.543: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.630: Message received: Team 7,password,-1,NA
+15:37:24.718: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.719: Message received: Team 7,password,-1,NA
+15:37:24.719: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.808: Message received: Team 7,password,-1,NA
+15:37:24.809: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.809: Message received: Team 7,password,-1,NA
+15:37:24.858: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.859: Message received: Team 7,password,-1,NA
+15:37:24.860: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:24.960: Message received: Team 7,password,-1,NA
+15:37:25.068: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.070: Message received: Team 7,password,-1,NA
+15:37:25.071: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.148: Message received: Team 7,password,-1,NA
+15:37:25.149: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.150: Message received: Team 7,password,-1,NA
+15:37:25.259: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.260: Message received: Team 7,password,-1,NA
+15:37:25.261: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.311: Message received: Team 7,password,-1,NA
+15:37:25.313: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.314: Message received: Team 7,password,-1,NA
+15:37:25.427: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.428: Message received: Team 7,password,-1,NA
+15:37:25.537: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.540: Message received: Team 7,password,-1,NA
+15:37:25.542: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.644: Message received: Team 7,password,-1,NA
+15:37:25.645: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.646: Message received: Team 7,password,-1,NA
+15:37:25.737: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.739: Message received: Team 7,password,-1,NA
+15:37:25.739: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.833: Message received: Team 7,password,-1,NA
+15:37:25.834: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.835: Message received: Team 7,password,-1,NA
+15:37:25.925: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:25.926: Message received: Team 7,password,-1,NA
+15:37:25.928: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.018: Message received: Team 7,password,-1,NA
+15:37:26.067: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.069: Message received: Team 7,password,-1,NA
+15:37:26.070: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.160: Message received: Team 7,password,-1,NA
+15:37:26.161: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.162: Message received: Team 7,password,-1,NA
+15:37:26.251: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.252: Message received: Team 7,password,-1,NA
+15:37:26.252: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.355: Message received: Team 7,password,-1,NA
+15:37:26.357: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.357: Message received: Team 7,password,-1,NA
+15:37:26.421: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.423: Message received: Team 7,password,-1,NA
+15:37:26.425: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.518: Message received: Team 7,password,-1,NA
+15:37:26.634: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.635: Message received: Team 7,password,-1,NA
+15:37:26.725: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.789: Message received: Team 7,password,-1,NA
+15:37:26.790: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.879: Message received: Team 7,password,-1,NA
+15:37:26.968: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:26.969: Message received: Team 7,password,-1,NA
+15:37:27.060: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.109: Message received: Team 7,password,-1,NA
+15:37:27.110: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.201: Message received: Team 7,password,-1,NA
+15:37:27.291: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.292: Message received: Team 7,password,-1,NA
+15:37:27.383: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.445: Message received: Team 7,password,-1,NA
+15:37:27.447: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.537: Message received: Team 7,password,-1,NA
+15:37:27.627: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.630: Message received: Team 7,password,-1,NA
+15:37:27.719: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.768: Message received: Team 7,password,-1,NA
+15:37:27.769: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.860: Message received: Team 7,password,-1,NA
+15:37:27.966: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:27.969: Message received: Team 7,password,-1,NA
+15:37:28.057: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.136: Message received: Team 7,password,-1,NA
+15:37:28.137: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.229: Message received: Team 7,password,-1,NA
+15:37:28.317: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.319: Message received: Team 7,password,-1,NA
+15:37:28.409: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.472: Message received: Team 7,password,-1,NA
+15:37:28.473: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.563: Message received: Team 7,password,-1,NA
+15:37:28.654: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.656: Message received: Team 7,password,-1,NA
+15:37:28.746: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.796: Message received: Team 7,password,-1,NA
+15:37:28.798: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.890: Message received: Team 7,password,-1,NA
+15:37:28.986: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:28.987: Message received: Team 7,password,-1,NA
+15:37:29.083: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.135: Message received: Team 7,password,-1,NA
+15:37:29.137: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.232: Message received: Team 7,password,-1,NA
+15:37:29.339: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.340: Message received: Team 7,password,-1,NA
+15:37:29.432: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.524: Message received: Team 7,password,-1,NA
+15:37:29.526: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.619: Message received: Team 7,password,-1,NA
+15:37:29.712: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.713: Message received: Team 7,password,-1,NA
+15:37:29.806: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.808: Message received: Team 7,password,-1,NA
+15:37:29.810: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.856: Message received: Team 7,password,-1,NA
+15:37:29.858: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.859: Message received: Team 7,password,-1,NA
+15:37:29.931: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.933: Message received: Team 7,password,-1,NA
+15:37:29.934: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:29.969: Message received: Team 7,password,-1,NA
+15:37:29.970: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.067: Message received: Team 7,password,-1,NA
+15:37:30.180: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.182: Message received: Team 7,password,-1,NA
+15:37:30.275: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.275: Message received: Team 7,password,-1,NA
+15:37:30.276: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.392: Message received: Team 7,password,-1,NA
+15:37:30.392: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.393: Message received: Team 7,password,-1,NA
+15:37:30.511: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.517: Message received: Team 7,password,-1,NA
+15:37:30.611: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.613: Message received: Team 7,password,-1,NA
+15:37:30.740: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.851: Message received: Team 7,password,-1,NA
+15:37:30.853: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.967: Message received: Team 7,password,-1,NA
+15:37:30.968: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:30.968: Message received: Team 7,password,-1,NA
+15:37:31.115: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.117: Message received: Team 7,password,-1,NA
+15:37:31.119: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.246: Message received: Team 7,password,-1,NA
+15:37:31.248: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.250: Message received: Team 7,password,-1,NA
+15:37:31.341: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.343: Message received: Team 7,password,-1,NA
+15:37:31.456: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.570: Message received: Team 7,password,-1,NA
+15:37:31.571: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.665: Message received: Team 7,password,-1,NA
+15:37:31.666: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.667: Message received: Team 7,password,-1,NA
+15:37:31.781: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.782: Message received: Team 7,password,-1,NA
+15:37:31.783: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.897: Message received: Team 7,password,-1,NA
+15:37:31.898: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.899: Message received: Team 7,password,-1,NA
+15:37:31.979: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:31.980: Message received: Team 7,password,-1,NA
+15:37:32.098: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.100: Message received: Team 7,password,-1,NA
+15:37:32.102: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.230: Message received: Team 7,password,-1,NA
+15:37:32.231: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.232: Message received: Team 7,password,-1,NA
+15:37:32.343: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.344: Message received: Team 7,password,-1,NA
+15:37:32.470: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.472: Message received: Team 7,password,-1,NA
+15:37:32.474: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.590: Message received: Team 7,password,-1,NA
+15:37:32.592: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.593: Message received: Team 7,password,-1,NA
+15:37:32.698: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.700: Message received: Team 7,password,-1,NA
+15:37:32.827: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.828: Message received: Team 7,password,-1,NA
+15:37:32.828: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.941: Message received: Team 7,password,-1,NA
+15:37:32.942: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:32.943: Message received: Team 7,password,-1,NA
+15:37:33.029: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.030: Message received: Team 7,password,-1,NA
+15:37:33.152: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.154: Message received: Team 7,password,-1,NA
+15:37:33.155: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.291: Message received: Team 7,password,-1,NA
+15:37:33.293: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.294: Message received: Team 7,password,-1,NA
+15:37:33.394: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.395: Message received: Team 7,password,-1,NA
+15:37:33.513: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.514: Message received: Team 7,password,-1,NA
+15:37:33.515: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.645: Message received: Team 7,password,-1,NA
+15:37:33.647: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.649: Message received: Team 7,password,-1,NA
+15:37:33.772: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.774: Message received: Team 7,password,-1,NA
+15:37:33.842: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.844: Message received: Team 7,password,-1,NA
+15:37:33.845: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.970: Message received: Team 7,password,-1,NA
+15:37:33.971: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:33.972: Message received: Team 7,password,-1,NA
+15:37:34.088: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.089: Message received: Team 7,password,-1,NA
+15:37:34.169: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.171: Message received: Team 7,password,-1,NA
+15:37:34.172: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.279: Message received: Team 7,password,-1,NA
+15:37:34.280: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.389: Message received: Team 7,password,-1,NA
+15:37:34.390: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.391: Message received: Team 7,password,-1,NA
+15:37:34.465: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.466: Message received: Team 7,password,-1,NA
+15:37:34.581: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.582: Message received: Team 7,password,-1,NA
+15:37:34.582: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.697: Message received: Team 7,password,-1,NA
+15:37:34.698: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.795: Message received: Team 7,password,-1,NA
+15:37:34.933: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:34.934: Message received: Team 7,password,-1,NA
+15:37:35.043: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.044: Message received: Team 7,password,-1,NA
+15:37:35.156: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.268: Message received: Team 7,password,-1,NA
+15:37:35.270: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.384: Message received: Team 7,password,-1,NA
+15:37:35.385: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.461: Message received: Team 7,password,-1,NA
+15:37:35.572: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.578: Message received: Team 7,password,-1,NA
+15:37:35.691: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.692: Message received: Team 7,password,-1,NA
+15:37:35.787: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.788: Message received: Team 7,password,-1,NA
+15:37:35.789: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:35.903: Message received: Team 7,password,-1,NA
+15:37:35.904: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.012: Message received: Team 7,password,-1,NA
+15:37:36.013: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.092: Message received: Team 7,password,-1,NA
+15:37:36.094: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.229: Message received: Team 7,password,-1,NA
+15:37:36.337: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.340: Message received: Team 7,password,-1,NA
+15:37:36.454: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.456: Message received: Team 7,password,-1,NA
+15:37:36.573: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.683: Message received: Team 7,password,-1,NA
+15:37:36.685: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.781: Message received: Team 7,password,-1,NA
+15:37:36.782: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.783: Message received: Team 7,password,-1,NA
+15:37:36.897: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:36.899: Message received: Team 7,password,-1,NA
+15:37:37.010: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.011: Message received: Team 7,password,-1,NA
+15:37:37.089: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.198: Message received: Team 7,password,-1,NA
+15:37:37.201: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.310: Message received: Team 7,password,-1,NA
+15:37:37.312: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.425: Message received: Team 7,password,-1,NA
+15:37:37.426: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.427: Message received: Team 7,password,-1,NA
+15:37:37.448: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.450: Message received: Team 7,password,-1,NA
+15:37:37.563: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:37.564: Message received: Team 7,password,-1,NA
+15:37:37.911: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.007: Message received: Team 7,password,-1,NA
+15:37:38.008: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.125: Message received: Team 7,password,-1,NA
+15:37:38.126: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.242: Message received: Team 7,password,-1,NA
+15:37:38.243: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.245: Message received: Team 7,password,-1,NA
+15:37:38.323: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.325: Message received: Team 7,password,-1,NA
+15:37:38.438: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.440: Message received: Team 7,password,-1,NA
+15:37:38.549: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.628: Message received: Team 7,password,-1,NA
+15:37:38.630: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.740: Message received: Team 7,password,-1,NA
+15:37:38.743: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.853: Message received: Team 7,password,-1,NA
+15:37:38.855: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:38.857: Message received: Team 7,password,-1,NA
+15:37:39.012: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.014: Message received: Team 7,password,-1,NA
+15:37:39.098: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.100: Message received: Team 7,password,-1,NA
+15:37:39.187: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.272: Message received: Team 7,password,-1,NA
+15:37:39.273: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.321: Message received: Team 7,password,-1,NA
+15:37:39.323: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.412: Message received: Team 7,password,-1,NA
+15:37:39.513: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:39.518: Message received: Team 7,password,-1,NA
+15:37:39.624: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.248: Message received: Team 7,password,-1,NA
+15:37:40.253: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.344: Message received: Team 7,password,-1,NA
+15:37:40.346: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.445: Message received: Team 7,password,-1,NA
+15:37:40.446: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.541: Message received: Team 7,password,-1,NA
+15:37:40.542: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.637: Message received: Team 7,password,-1,NA
+15:37:40.741: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.744: Message received: Team 7,password,-1,NA
+15:37:40.801: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.802: Message received: Team 7,password,-1,NA
+15:37:40.910: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:40.911: Message received: Team 7,password,-1,NA
+15:37:41.015: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.017: Message received: Team 7,password,-1,NA
+15:37:41.018: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.112: Message received: Team 7,password,-1,NA
+15:37:41.502: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.554: Message received: Team 7,password,-1,NA
+15:37:41.555: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.556: Message received: Team 7,password,-1,NA
+15:37:41.645: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.646: Message received: Team 7,password,-1,NA
+15:37:41.735: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.736: Message received: Team 7,password,-1,NA
+15:37:41.825: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.827: Message received: Team 7,password,-1,NA
+15:37:41.877: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:41.965: Message received: Team 7,password,-1,NA
+15:37:41.967: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.056: Message received: Team 7,password,-1,NA
+15:37:42.058: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.149: Message received: Team 7,password,-1,NA
+15:37:42.151: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.215: Message received: Team 7,password,-1,NA
+15:37:42.217: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.218: Message received: Team 7,password,-1,NA
+15:37:42.323: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.325: Message received: Team 7,password,-1,NA
+15:37:42.417: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.420: Message received: Team 7,password,-1,NA
+15:37:42.492: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.493: Message received: Team 7,password,-1,NA
+15:37:42.582: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.604: Message received: Team 7,password,-1,NA
+15:37:42.606: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.697: Message received: Team 7,password,-1,NA
+15:37:42.698: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.788: Message received: Team 7,password,-1,NA
+15:37:42.791: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.880: Message received: Team 7,password,-1,NA
+15:37:42.881: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.882: Message received: Team 7,password,-1,NA
+15:37:42.942: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:42.944: Message received: Team 7,password,-1,NA
+15:37:43.034: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.035: Message received: Team 7,password,-1,NA
+15:37:43.124: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.125: Message received: Team 7,password,-1,NA
+15:37:43.222: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.224: Message received: Team 7,password,-1,NA
+15:37:43.293: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.295: Message received: Team 7,password,-1,NA
+15:37:43.398: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.487: Message received: Team 7,password,-1,NA
+15:37:43.489: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.579: Message received: Team 7,password,-1,NA
+15:37:43.581: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:43.635: Message received: Team 7,password,-1,NA
+15:37:43.636: Careful there detective the timer is not active yet. How about you start the timer first.
+15:37:49.938: Message received: Team 7,password,0,NA
+15:37:49.939: Timer started.
+15:37:50.025: Message received: Team 7,password,0,NA
+15:37:50.026: Timer started.
+15:37:50.116: Message received: Team 7,password,0,NA
+15:37:50.117: Timer started.
+15:37:50.141: Message received: Team 7,password,0,NA
+15:37:50.142: Timer started.
+15:37:50.233: Message received: Team 7,password,0,NA
+15:37:50.234: Timer started.
+15:37:50.324: Message received: Team 7,password,0,NA
+15:37:50.325: Timer started.
+15:37:50.415: Message received: Team 7,password,0,NA
+15:37:50.478: Timer started.
+15:37:50.479: Message received: Team 7,password,0,NA
+15:37:50.574: Timer started.
+15:37:50.576: Message received: Team 7,password,0,NA
+15:37:50.666: Timer started.
+15:38:13.069: Message received: Team 7,password,0,NA
+15:38:13.070: Timer started.
+15:38:13.163: Message received: Team 7,password,0,NA
+15:38:13.164: Timer started.
+15:38:13.259: Message received: Team 7,password,0,NA
+15:38:13.261: Timer started.
+15:38:13.313: Message received: Team 7,password,0,NA
+15:38:13.314: Timer started.
+15:38:13.412: Message received: Team 7,password,0,NA
+15:38:13.413: Timer started.
+15:38:13.513: Message received: Team 7,password,0,NA
+15:38:13.514: Timer started.
+15:38:13.621: Message received: Team 7,password,0,NA
+15:38:13.623: Timer started.
+15:38:13.716: Message received: Team 7,password,0,NA
+15:38:13.808: Timer started.
+15:38:13.810: Message received: Team 7,password,0,NA
+15:38:13.903: Timer started.
+15:39:46.789: Message received: Team 7,password,0,NA
+15:39:46.790: Timer started.
+15:39:46.829: Message received: Team 7,password,0,NA
+15:39:46.905: Timer started.
+15:39:46.906: Message received: Team 7,password,0,NA
+15:39:47.005: Timer started.
+15:39:47.007: Message received: Team 7,password,0,NA
+15:39:47.149: Timer started.
+15:39:47.149: Message received: Team 7,password,0,NA
+15:39:47.285: Timer started.
+15:39:47.356: Message received: Team 7,password,0,NA
+15:39:47.359: Timer started.
+15:39:47.428: Message received: Team 7,password,0,NA
+15:39:47.429: Timer started.
+15:39:47.537: Message received: Team 7,password,0,NA
+15:39:47.539: Timer started.

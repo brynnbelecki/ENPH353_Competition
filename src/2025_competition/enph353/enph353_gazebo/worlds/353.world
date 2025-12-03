@@ -21,6 +21,7 @@
       <shadows>0</shadows>
     </scene>
 
+
     <include>
       <uri>model://water_block</uri>
       <name>water_block</name>
@@ -35,6 +36,7 @@
     	<pose>6 0 0.25 0 0 1.57</pose>
     	<static>true</static>
     </include>
+
     <include>
     	<uri>model://wall</uri>
     	<name>south_wall</name>

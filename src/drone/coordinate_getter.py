@@ -27,27 +27,17 @@ class DroneVisionNode:
             rospy.logerr(f"CvBridge Error: {e}")
             return
 
-        # Step 1: Find rectangle corners
         rect_corners = self.find_rectangle_corners(cv_image)
-        if rect_corners is not None:
-            for pt in rect_corners:
-                x, y = map(int, pt)
-                cv2.circle(cv_image, (x, y), 5, (0, 0, 255), -1)
 
         if rect_corners is None:
-            # No rectangle → publish invalid coords
             coords_msg = Float32MultiArray()
             coords_msg.data = [-1, -1, -1, -1]
             self.pub.publish(coords_msg)
             return
 
-        cyan_center = self.find_color_center(cv_image, lower=np.array([200, 200, 0]), upper=np.array([255, 255, 50]))
-        yellow_center = self.find_color_center(cv_image, lower=np.array([0, 200, 200]), upper=np.array([50, 255, 255]))
+        cyan_center = self.find_color_center(cv_image, lower=np.array([220, 220, 0]), upper=np.array([255, 255, 50]))
+        yellow_center = self.find_color_center(cv_image, lower=np.array([0, 220, 220]), upper=np.array([50, 255, 255]))
 
-        if cyan_center is not None:
-            cv2.circle(cv_image, (int(cyan_center[0]),int(cyan_center[1])), 2, (255, 255, 0), -1)
-        if yellow_center is not None:
-            cv2.circle(cv_image, (int(yellow_center[0]),int(yellow_center[1])), 2, (0, 255, 255), -1)
 
         
         coords_msg = Float32MultiArray()
@@ -63,7 +53,12 @@ class DroneVisionNode:
             x_y, y_y = -1, -1
 
         coords_msg = Float32MultiArray()
-        coords_msg.data = [x_c, y_c, x_y, y_y]
+        coords_msg.data = [
+            round(x_c, 4) if x_c != -1 else -1,
+            round(y_c, 4) if y_c != -1 else -1,
+            round(x_y, 4) if x_y != -1 else -1,
+            round(y_y, 4) if y_y != -1 else -1,
+        ]
 
         self.pub.publish(coords_msg)
 

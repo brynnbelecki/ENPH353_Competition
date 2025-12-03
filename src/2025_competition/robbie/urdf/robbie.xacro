@@ -114,6 +114,21 @@
     </visual>
   </link>
 
+  <link name='camera_linkRead'>
+    <xacro:box_inertial name="camera_linkRead" m="${camera_mass}" x="${camera_width}" y="${camera_length}" z="${camera_height}"/>
+    <collision name='camera_link_collision'>
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+    </collision>
+    <visual name='camera_link_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+    </visual>
+  </link>
+
   <joint name="wheel_FR_joint" type="continuous">
     <parent link="chassis"/>
     <child link="wheel_FR"/>
@@ -150,6 +165,12 @@
     <parent link="chassis"/>
     <child link="camera_link"/>
     <origin xyz="${chassis_length/2} 0 ${chassis_height/2+camera_height/2}"/>
+  </joint>
+
+  <joint name="cameraRead_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_linkRead"/>
+    <origin xyz="0 0 ${camera_height/2}"/>
   </joint>
 
   <gazebo reference="chassis">
@@ -196,7 +217,7 @@
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
-        <horizontal_fov>1.3962634</horizontal_fov>
+        <horizontal_fov>2</horizontal_fov>
         <image>
           <width>800</width>
           <height>800</height>
@@ -232,5 +253,50 @@
     </sensor>
   </gazebo>
 
+ <gazebo reference="camera_linkRead">
+    <sensor type="camera" name="camera2">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.75</horizontal_fov>
+        <image>
+          <width>2160</width>
+          <height>2160</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+              That pixel's noise value is added to each of its color
+              channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera2</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_linkRead</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="clueboard_handler" filename="libClueboardHandler.so">
+      <namespace>R1</namespace>
+    </plugin>
+  </gazebo>
 
 </robot>

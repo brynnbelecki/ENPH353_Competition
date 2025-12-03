@@ -27,4 +27,8 @@
         output="screen" respawn="false">
   </node>
 
+  <node name="d2_master" pkg="drone" type="competition_master_control.py"
+        output="screen" respawn="false">
+  </node>
+
 </launch>

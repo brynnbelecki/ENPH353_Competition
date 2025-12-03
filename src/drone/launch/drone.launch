@@ -10,11 +10,6 @@
         args="$(arg init_pose) -unpause -urdf -model $(arg robot_name) -param robot_description"
         respawn="false" output="screen" />
 
-  <node name="stabilizer" pkg="drone" type="stabilizer.py"
-        output="screen" respawn="false">
-    <param name="namespace" value="$(arg namespace)"/>
-  </node>
-
   <node name="linear" pkg="drone" type="linear_control.py"
         output="screen" respawn="false"/>
 </launch>
