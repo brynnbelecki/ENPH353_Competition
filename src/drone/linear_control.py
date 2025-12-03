@@ -25,7 +25,7 @@ class DronePIDController:
         self.Ki_z = 25
         self.Kd_z = 200.0
 
-        N = 15
+        N = 5
 
         self.Kp_xy = 12 * N
         self.Ki_xy = 15 * N
@@ -78,7 +78,7 @@ class DronePIDController:
             self.last_time = self.current_time
             rospy.loginfo("[PID CTRL] Activated. Applying initial downward thrust!")
 
-        if not self.active and (self.current_time - self.start_time > 1.5):
+        if not self.active and (self.current_time - self.start_time > 5):
             self.active = True
             rospy.loginfo("[PID CTRL] PID control active.")
 

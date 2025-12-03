@@ -45,7 +45,7 @@ class DronePIDController:
 
         self.target_x = 0.05
         self.target_y = 0.825
-        self.target_z = 0
+        self.target_z = 0.5
         self.new_target = True
 
         self.curr_x = 0.1
@@ -58,7 +58,7 @@ class DronePIDController:
 
         self.current_time = None
         self.start_time = None
-        self.start_delay = 3
+        self.start_delay = 6
 
         self._pid_thread = threading.Thread(target=self.pid_loop)
         self._pid_thread.daemon = True
@@ -120,13 +120,12 @@ class DronePIDController:
 
             if self.current_time - self.start_time < self.start_delay:
                 cmd = Twist()
-                cmd.linear.z = -15000.0
+                cmd.linear.z = -5000.0
                 self.new_target = True
                 self.pub_cmd.publish(cmd)
                 rate.sleep()
                 continue
 
-            
 
             self.publish_pid(dt)
             rate.sleep()
@@ -139,6 +138,7 @@ class DronePIDController:
         error_y = (self.target_y - self.curr_y)
         error_y = np.sign(error_y) * abs(error_y) * self.y_scale
         error_z = self.target_z - self.curr_z
+        
 
         self.integral_x += error_x * dt
         self.integral_y += error_y * dt
@@ -148,13 +148,16 @@ class DronePIDController:
         raw_dy = (error_y - self.prev_error_y) / dt
         derivative_x = self.smooth_derivative(self.dx_history, raw_dx)
         derivative_y = self.smooth_derivative(self.dy_history, raw_dy)
+        derivative_z = (error_z - self.prev_error_z) / dt
 
         if self.new_target:
             derivative_x = 0
             derivative_y = 0
+            derivative_z = 0
             self.new_target = False
+        rospy.loginfo(f"{error_y}  {derivative_y}, {self.integral_y}")
 
-        derivative_z = (error_z - self.prev_error_z) / dt
+        
 
         vx_cmd = self.Kp_xy * error_x + self.Ki_xy * self.integral_x + self.Kd_xy * derivative_x
         vy_cmd = self.Kp_xy * error_y + self.Ki_xy * self.integral_y + self.Kd_xy * derivative_y

@@ -10,7 +10,7 @@ class DroneTargetTrigger:
         rospy.Subscriber("/drone_coords", Float32MultiArray, self.coords_callback)
 
         self.targets = [
-            [0.008, 0.835, 0.5, -1/2],   # sign 1          
+            [0.008, 0.84, 0.5, -1/2],   # sign 1          
             [0.064, 0.29, 0.5, -1/2],    # sign 2
             [0.145, 0.2, 0.5, 1],        # sign 3  
             [0.43, 0.37, 0.5, 1/2],      # sign 4
@@ -19,11 +19,13 @@ class DroneTargetTrigger:
             [0.835, 0.12, 0.5, 0],       # sign 7  
             [0.85, 0.12, 2.5, 0],      # waypoint (special: no Z=0 drop, just wait)
             [0.63, 0.27, 2.5, 0], # waypoint (special: no Z=0 drop, just wait)
-            [0.63, 0.27, 1, 0]          # final sign
+            [0.63, 0.27, 1, 0],        # final sign
+            [0.75, 0.1, 2.5, 0], #slam into the tunnel
+            [0.75, 0.1, 0, 0]
         ]
 
-        self.xy_threshold = 0.0075  
-        self.threshold_count_required = 5
+        self.xy_threshold = 0.005  
+        self.threshold_count_required = 15
 
         self.curr_x = 0.0
         self.curr_y = 0.0
@@ -39,8 +41,6 @@ class DroneTargetTrigger:
         self.curr_x = (msg.data[0] + msg.data[2]) / 2
         self.curr_y = (msg.data[1] + msg.data[3]) / 2
 
-        if len(msg.data) >= 5:
-            self.curr_z = msg.data[4]
 
     def main_loop(self):
         while not rospy.is_shutdown():
@@ -56,7 +56,7 @@ class DroneTargetTrigger:
                 consecutive_count = 0
 
                 if is_waypoint:
-                    rospy.sleep(0.25)
+                    rospy.sleep(0.5)
                     continue  
 
                 while not rospy.is_shutdown():
@@ -78,7 +78,7 @@ class DroneTargetTrigger:
                 rospy.sleep(0.5)
 
                 self.publish_target(tx, ty, tz, yaw)
-                rospy.sleep(0.25)
+                rospy.sleep(0.5)
             return
 
     def publish_target(self, x, y, z, yaw):
