@@ -32,7 +32,7 @@
 	<group ns="D2">
 		<param name="tf_prefix" value="D2_tf"/>
 		<include file="$(find drone)/launch/drone2.launch">
-			<arg name="init_pose" value="-x 5.5 -y 2 -z 0.1 -R 0.0 -P 0.0 -Y -1.256" />
+			<arg name="init_pose" value="-x 5.5 -y 2 -z 0.1 -R 0.0 -P 0.0 -Y 1.256" />
 			<arg name="robot_name"  value="D2" />
 		</include>
 	</group>
