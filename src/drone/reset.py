@@ -6,6 +6,7 @@ from gazebo_msgs.srv import SetModelState
 import subprocess
 import os
 from geometry_msgs.msg import Pose, Quaternion
+from std_msgs.msg import String 
 from tf.transformations import quaternion_from_euler
 
 class DroneReset:
@@ -13,6 +14,7 @@ class DroneReset:
         rospy.init_node("drone_reset_node")
         self.reset_sub = rospy.Subscriber("/drone_reset", Bool, self.reset_callback)
         rospy.loginfo("[DroneReset] Node started, waiting for reset messages...")
+        self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
 
         # Define starting poses for D1 and D2 based on your launch args
         self.starting_poses = {
@@ -38,6 +40,9 @@ class DroneReset:
         if not msg.data:
             return
         rospy.loginfo("[DroneReset] Reset triggered!")
+
+        self.pubScore = rospy.Publisher('/score_tracker', String, queue_size=10)
+        self.pubScore.publish(f"Team 7,password,-1,NA")
 
         # 1. Teleport drones
         self.teleport_drone("D1", self.starting_poses["D1"])

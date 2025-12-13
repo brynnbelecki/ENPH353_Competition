@@ -104,12 +104,16 @@
     <camera>
       <horizontal_fov>1.75</horizontal_fov>
       <image>
-        <width>1800</width>
-        <height>1200</height>
+        <width>2160</width>
+        <height>2160</height>
         <format>R8G8B8</format>
+        <noise type="gaussian">
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
       </image>
       <clip>
-        <near>0.05</near>
+        <near>0.075</near>
         <far>50.0</far>
       </clip>
     </camera>
@@ -118,7 +122,7 @@
       <robotNamespace>/D2</robotNamespace>
       <cameraName>rgb_camera</cameraName>
       <frameName>rgb_camera_link</frameName>
-      <updateRate>60</updateRate>
+      <updateRate>30</updateRate>
     </plugin>
   </sensor>
 </gazebo>
@@ -196,6 +200,10 @@
           <width>300</width>
           <height>150</height>
           <format>L8</format>
+          <noise type="gaussian">
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
         </image>
         <clip>
           <near>0.05</near>

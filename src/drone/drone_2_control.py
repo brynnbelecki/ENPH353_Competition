@@ -14,6 +14,7 @@ class DronePIDController:
         self.ns = namespace
         rospy.init_node(f'{self.ns}_pid_controller', anonymous=True)
         rospy.set_param('/use_sim_time', True)
+        rospy.sleep(0.05)
 
         # Publishers / Subscribers
         self.pub_cmd = rospy.Publisher("drone_linear_cmd", Twist, queue_size=10)
@@ -23,14 +24,22 @@ class DronePIDController:
         rospy.Subscriber("/drone_target", Float32MultiArray, self.target_callback)
         rospy.Subscriber("/pid_tuning", Float32MultiArray, self.pid_tuning_callback)
 
+        self.stuck_counter_x = 0
+        self.stuck_counter_y = 0
+        self.stuck_counter_z = 0
+
+        self.stuck_threshold = 10000  # number of loops before triggering reset
+
+        self.reset_pub = rospy.Publisher("/drone_reset", Bool, queue_size=1)
+
         self.bridge = CvBridge()
 
         self.Kp_z = 200.0
         self.Ki_z = 25
         self.Kd_z = 200.0
-        self.Kp_xy = 12000
+        self.Kp_xy = 11000
         self.Ki_xy = 10000
-        self.Kd_xy = 4500
+        self.Kd_xy = 2950
         self.y_scale = 0.475
 
         self.prev_error_z = 0.0
@@ -53,7 +62,7 @@ class DronePIDController:
         self.curr_y = 0.9
         self.curr_z = 0.0
 
-        self.deriv_window = 10
+        self.deriv_window = 5
         self.dx_history = []
         self.dy_history = []
 
@@ -112,8 +121,8 @@ class DronePIDController:
                           f"Kp_z={self.Kp_z}, Ki_z={self.Ki_z}, Kd_z={self.Kd_z}")
 
     def pid_loop(self):
-        rate = rospy.Rate(400)  
-        dt = 1.0 / 400.0
+        rate = rospy.Rate(200)  
+        dt = 1.0 / 200.0
         while not rospy.is_shutdown():
             if self.current_time is None:
                 rate.sleep()
@@ -121,7 +130,7 @@ class DronePIDController:
 
             if self.current_time - self.start_time < self.start_delay:
                 cmd = Twist()
-                cmd.linear.z = -5000.0
+                cmd.linear.z = -2000.0
                 self.new_target = True
                 self.pub_cmd.publish(cmd)
                 rate.sleep()
@@ -169,7 +178,9 @@ class DronePIDController:
         vy_cmd = np.clip(vy_cmd, self.min_thrust, self.max_thrust)
 
         if self.target_z < 0.1:
-            vz_cmd = -5000
+            vz_cmd = -2000
+            vy_cmd = 0
+            vx_cmd = 0
 
         cmd.linear.x = vx_cmd
         cmd.linear.y = vy_cmd
@@ -177,10 +188,38 @@ class DronePIDController:
 
         self.pub_cmd.publish(cmd)
 
+
         # --- Save previous errors ---
         self.prev_error_x = error_x
         self.prev_error_y = error_y
         self.prev_error_z = error_z
+
+        if derivative_x < 0.01:
+            self.stuck_counter_x += 1
+        else:
+            self.stuck_counter_x = 0
+
+        if derivative_y < 0.01:
+            self.stuck_counter_y += 1
+        else:
+            self.stuck_counter_y = 0
+
+        if derivative_z < 0.01:
+            self.stuck_counter_z += 1
+        else:
+            self.stuck_counter_z = 0
+
+
+        if (self.stuck_counter_x > self.stuck_threshold or
+            self.stuck_counter_y > self.stuck_threshold or
+            self.stuck_counter_z > self.stuck_threshold):
+            rospy.logwarn("[PID] Drone stuck — triggering reset!")
+            self.reset_pub.publish(True)
+            self.stuck_counter_x = 0
+            self.stuck_counter_y = 0
+            self.stuck_counter_z = 0
+
+
 
 
 

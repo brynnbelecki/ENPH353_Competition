@@ -25,11 +25,11 @@ class DronePIDController:
         self.Ki_z = 25
         self.Kd_z = 200.0
 
-        N = 5
+        N = 2
 
-        self.Kp_xy = 12 * N
-        self.Ki_xy = 15 * N
-        self.Kd_xy = 1.5 * N
+        self.Kp_xy = 8 * N
+        self.Ki_xy = 26 * N
+        self.Kd_xy = 8.5 * N
         self.y_scale = 1.05
 
         # PID memory
